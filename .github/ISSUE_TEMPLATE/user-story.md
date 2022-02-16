@@ -3,7 +3,7 @@ name: User Story
 about: Request a change to the software
 title: ''
 labels: 'User Story'
-projects: 1
+projects: 'Scheduling App'
 assignees:
 
 ---
