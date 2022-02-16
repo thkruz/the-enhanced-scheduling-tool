@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import { useEffect, useState } from 'react';
+import useFetch from './useFetch';
 
-export default function FakeComponent({url}) {
-  const [mockState, setMockState] = useState([0,0,0]);
-  const {data, err, load} = useFetch(url);
+const FakeComponent = ({ url }) => {
+  const [mockState, setMockState] = useState([0, 0, 0]);
+  const { data, err, load } = useFetch(url);
 
-  useEffect( () => {
-    setMockState(data,err,load);
-  },[])
+  useEffect(() => {
+    setMockState(data, err, load);
+  }, [data, err, load]);
 
-  function handleClick () {
+  function handleClick() {
     console.log(data, err, load);
   }
 
@@ -18,5 +18,7 @@ export default function FakeComponent({url}) {
       <button onClick={handleClick}>Fetch Data</button>
       <p>Data: {mockState}</p>
     </div>
-  )
-}
+  );
+};
+
+export default FakeComponent;
