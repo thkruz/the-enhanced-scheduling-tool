@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - master
+      - develop
 
 jobs:
   lint-yml:
@@ -67,7 +68,7 @@ jobs:
         run: npm ci --ignore-scripts
       # Run ESLint
       - name: ESLint
-        run: npx eslint . --ignore-path .gitignore --ext js,ts,tsx
+        run: npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx
   unit-tests:
     needs: compliance
     name: Unit Tests
@@ -106,10 +107,7 @@ jobs:
           timezoneLinux: "America/New_York"
       # Unit Tests
       - name: Test
-        run: npm test
-      # Code Coverage
-      - name: Code Coverage
-        run: node ./node_modules/.bin/codecov
+        run: npm test:frontend
   build:
     needs: [eslint, unit-tests]
     name: Build
@@ -143,23 +141,30 @@ jobs:
         run: npm ci --ignore-scripts
       # Build
       - name: Build
-        run: npm run build
-  codeQl:
+        run: npm run build:frontend
+  trufflehog:
     needs: build
-    name: CodeQL
+    name: TruffleHog
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # CodeQL
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
+      - uses: actions/checkout@v2
         with:
-          languages: javascript
+          fetch-depth: 0
+      - name: trufflehog-actions-scan
+        uses: edplato/trufflehog-actions-scan@master
+  analyze:
+    needs: build
+    name: SonarQube
+    runs-on: ubuntu-latest
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v1
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+    steps:
+      # Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      # SonarQube
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
