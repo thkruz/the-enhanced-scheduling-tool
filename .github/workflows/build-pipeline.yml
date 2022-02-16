@@ -107,10 +107,7 @@ jobs:
           timezoneLinux: "America/New_York"
       # Unit Tests
       - name: Test
-        run: npm test
-      # Code Coverage
-      - name: Code Coverage
-        run: node ./node_modules/.bin/codecov
+        run: npm test:frontend
   build:
     needs: [eslint, unit-tests]
     name: Build
@@ -144,7 +141,7 @@ jobs:
         run: npm ci --ignore-scripts
       # Build
       - name: Build
-        run: npm run build
+        run: npm run build:frontend
   trufflehog:
     needs: build
     name: TruffleHog
