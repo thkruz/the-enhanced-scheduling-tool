@@ -1,0 +1,19 @@
+{
+  "name": "the-enhanced-scheduling-tool",
+  "version": "1.0.0",
+  "description": "The Enhanced Scheduling Tool (TEST)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkbdsi/sdi-blended-project2-scaffold.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkbdsi/sdi-blended-project2-scaffold/issues"
+  },
+  "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme"
+}
