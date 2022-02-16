@@ -68,7 +68,7 @@ jobs:
         run: npm ci --ignore-scripts
       # Run ESLint
       - name: ESLint
-        run: npx eslint . --ignore-path .gitignore --ext js,ts,tsx
+        run: npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx
   unit-tests:
     needs: compliance
     name: Unit Tests
