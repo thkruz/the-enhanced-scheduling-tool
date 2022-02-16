@@ -19,9 +19,9 @@ We do not have any way for our unit to interact with our application.
 24/7 coverage
 2 person per shift
 8 hour shifts
-  Morning | 0800 - 1600
-  Swing | 1600 - 0000
-  Evening | 0000 - 0800
+  - Morning | 0700 - 1500
+  - Swing | 1500 - 2300
+  - Evening | 2300 - 0700
 
 ### Glossary
 user - a person on a computer
