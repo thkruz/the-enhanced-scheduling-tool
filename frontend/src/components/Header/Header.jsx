@@ -1,27 +1,23 @@
 import React from "react";
 
-const getPageTitle = () => {
-    let url = location.href;
-    
-    if (/admin/.test(url)) {
-        return 'Admin Page'
-    }
-    else if (/users/.test(url)) {
-        return 'Member Availability'
-    }
-    else if (/about/.test(url)) {
-        return 'Developer Info'
-    }
-    else {
-        return 'Scheduling App'
+const getPageTitle = (location) => {        
+    switch(location) {
+        case '/about':
+            return 'Developer Info'
+        case '/user':
+            return 'Member Availability'
+        case '/admin':
+            return 'Admin Page'
+        default:
+            return 'Scheduling App'
     }
 }
 
-const Header = () => {
+const Header = ({location}) => {    
     return (
         <div>
             <h1 style={ {textAlign: "center"} }>
-                {getPageTitle()}
+                {getPageTitle(location)}
             </h1>
         </div>
     )
