@@ -65,7 +65,7 @@ jobs:
             ${{ runner.os }}-
       # Ensure Node Modules Setup
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: cd frontend && npm ci --ignore-scripts
       # Run ESLint
       - name: ESLint
         run: npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx
@@ -99,7 +99,7 @@ jobs:
             ${{ runner.os }}-
       # Ensure Node Modules Setup
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: cd frontend && npm ci --ignore-scripts
       # Set Timezone to match snapshots
       - name: Set Timezone
         uses: szenius/set-timezone@v1.0
@@ -107,7 +107,7 @@ jobs:
           timezoneLinux: "America/New_York"
       # Unit Tests
       - name: Test
-        run: npm test:frontend
+        run: npm run test:frontend
   build:
     needs: [eslint, unit-tests]
     name: Build
@@ -138,7 +138,7 @@ jobs:
             ${{ runner.os }}-
       # Ensure Node Modules Setup
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: cd frontend && npm ci --ignore-scripts
       # Build
       - name: Build
         run: npm run build:frontend
@@ -156,6 +156,7 @@ jobs:
   analyze:
     needs: build
     name: SonarQube
+    continue-on-error: true
     runs-on: ubuntu-latest
 
     steps:
