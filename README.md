@@ -24,8 +24,8 @@ We do not have any way for our unit to interact with our application.
   - Evening | 2300 - 0700
 
 ### Glossary
-user - a person on a computer
-member - is someone who can be put into the schedule
+- user - a person on a computer
+- member - is someone who can be put into the schedule
 
 ### MVP
 We should have a frontend that allows the user to input a roster and unavailability statuses of members on the roster.
