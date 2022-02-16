@@ -65,7 +65,7 @@ jobs:
             ${{ runner.os }}-
       # Ensure Node Modules Setup
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: cd frontend && npm ci --ignore-scripts
       # Run ESLint
       - name: ESLint
         run: npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx
@@ -99,7 +99,7 @@ jobs:
             ${{ runner.os }}-
       # Ensure Node Modules Setup
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: cd frontend && npm ci --ignore-scripts
       # Set Timezone to match snapshots
       - name: Set Timezone
         uses: szenius/set-timezone@v1.0
