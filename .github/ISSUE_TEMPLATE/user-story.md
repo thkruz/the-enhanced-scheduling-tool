@@ -2,8 +2,9 @@
 name: User Story
 about: Request a change to the software
 title: ''
-labels: ''
-assignees: thkruz
+labels: 'User Story'
+projects: 1
+assignees:
 
 ---
 
@@ -13,9 +14,9 @@ assignees: thkruz
 - **So that** what is your end goal?
 
 ### Acceptance Criteria
-- **Given** what are the starting conditions
-- **When** what actions do you take
-- **Then** what is the end result 
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
 
 <!-- Note: If you have additional criteria copy and paste the above blocks -->
 
