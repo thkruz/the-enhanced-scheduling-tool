@@ -138,7 +138,7 @@ jobs:
             ${{ runner.os }}-
       # Ensure Node Modules Setup
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: cd frontend && npm ci --ignore-scripts
       # Build
       - name: Build
         run: npm run build:frontend
