@@ -156,6 +156,7 @@ jobs:
   analyze:
     needs: build
     name: SonarQube
+    continue-on-error: true
     runs-on: ubuntu-latest
 
     steps:
