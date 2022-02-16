@@ -107,7 +107,7 @@ jobs:
           timezoneLinux: "America/New_York"
       # Unit Tests
       - name: Test
-        run: npm test:frontend
+        run: npm run test:frontend
   build:
     needs: [eslint, unit-tests]
     name: Build
