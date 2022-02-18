@@ -1,9 +1,13 @@
-import styled from 'styled-components';
-
+import React, {useState, useEffect} from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
+import Calendar from './pages/About/Calendar';
 import About from './pages/About/About';
+
+import useFetch from './utils/useFetch/useFetch';
+
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -52,6 +56,15 @@ const Right = styled.section`
 `
 
 function App() {
+
+  const {data, err, load} = useFetch('roster');
+
+  useEffect(() => {
+    console.log(data);
+    console.log(err);
+    console.log(load);
+  },[data, err, load])
+
   return (
     <Container>
       <Navigation>
@@ -67,14 +80,12 @@ function App() {
             </ul>
             <span>Roster (just placeholders)</span>
             <ul>
-              <li><Link to="/user/1">User 1</Link></li>
-              <li><Link to="/user/2">User 2</Link></li>
-              <li><Link to="/user/3">User 3</Link></li>
+              { data && data.map( (member) => <li><Link to={`/user/${member.id}`}>{member.name}</Link></li> )}
             </ul>
           </Left>
           <Center>
             <Routes>
-              <Route path="/" element={<Loading />} />
+              <Route path="/" element={<Calendar />} />
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Loading />} />
             </Routes>

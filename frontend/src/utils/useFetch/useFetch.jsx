@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const baseUrl = 'http://localhost:3001/';
 
 const useFetch = urlRoute => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [err, setErr] = useState(null);
   const [load, setLoad] = useState(true);
 

@@ -60,7 +60,7 @@ export default function About() {
       <List>
         {developers.map( (developer) => {
           return (
-            <Card>
+            <Card key={developer.id}>
               <Developer>{developer.name}</Developer>
               <a href={developer.link} target="_blank" rel="noreferrer">GitHub: {developer.github}</a>
               <p>{developer.tag}</p>
