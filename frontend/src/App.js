@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
+import About from './pages/About/About';
 
 const Container = styled.div`
   display: flex;
@@ -74,7 +75,7 @@ function App() {
           <Center>
             <Routes>
               <Route path="/" element={<Loading />} />
-              <Route path="/about" element={<Loading />} />
+              <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Loading />} />
             </Routes>
           </Center>
