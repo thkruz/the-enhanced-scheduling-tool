@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Loading from './components/Loading';
+import Loading from './components/Loading/Loading';
+import About from './pages/About/About';
 
 const Container = styled.div`
   display: flex;
@@ -12,9 +13,10 @@ const Container = styled.div`
   border-radius: 10px;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
   background: #F5F9FB;
+  height: 99vh;
 `
 
-const Navigation = styled(Container)`
+const Navigation = styled.nav`
   width: 100%;
   border-radius: 0;
   box-shadow: none;
@@ -30,8 +32,9 @@ const Main = styled.main`
 `
 const Left = styled.section`
   display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
   width: 300px;
-  justify-content: flex-start;
 `
 
 const Center = styled.section`
@@ -55,10 +58,25 @@ function App() {
         <Header location={useLocation().pathname} />
       </Navigation>
         <Main>
-          <Left>Left Content</Left>
+          <Left>
+            <span>Quick Navigation</span>
+            <ul>
+              <li><NavLink to="/">Schedule</NavLink></li>
+              <li><NavLink to="/about">Developers</NavLink></li>
+              <li><NavLink to="/admin">Administration</NavLink></li>
+            </ul>
+            <span>Roster (just placeholders)</span>
+            <ul>
+              <li><Link to="/user/1">User 1</Link></li>
+              <li><Link to="/user/2">User 2</Link></li>
+              <li><Link to="/user/3">User 3</Link></li>
+            </ul>
+          </Left>
           <Center>
             <Routes>
               <Route path="/" element={<Loading />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/admin" element={<Loading />} />
             </Routes>
           </Center>
           <Right>PIX</Right>
