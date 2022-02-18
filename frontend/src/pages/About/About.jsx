@@ -62,7 +62,7 @@ export default function About() {
           return (
             <Card>
               <Developer>{developer.name}</Developer>
-              <a href={developer.link} target="_blank">GitHub: {developer.github}</a>
+              <a href={developer.link} target="_blank" rel="noopener" >GitHub: {developer.github}</a>
               <p>{developer.tag}</p>
             </Card>
           )
