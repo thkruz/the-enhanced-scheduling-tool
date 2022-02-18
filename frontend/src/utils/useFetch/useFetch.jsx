@@ -16,10 +16,7 @@ const useFetch = urlRoute => {
           throw new Error('Cannot convert response to json');
         }
       })
-      .then(json => {
-        console.warn(json);
-        return setData(json);
-      })
+      .then(json => setData(json))
       .catch(e => setErr(e))
       .finally(() => setLoad(false));
   }, [urlRoute]);
