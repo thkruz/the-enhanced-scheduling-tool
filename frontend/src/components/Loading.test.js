@@ -1,4 +1,4 @@
-import { screen, render, waitFor } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import Loading from './Loading';
 
 describe('unit tests for the Loading component', () => {
