@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react';
+import { screen, render, waitFor } from '@testing-library/react';
 import Loading from './Loading';
 
 describe('unit tests for the Loading component', () => {
@@ -7,9 +7,9 @@ describe('unit tests for the Loading component', () => {
     render(<Loading />);
   }
 
-  test('it should display a header with the words Loading onto the page', () => {
+  test('it should display a header with the words Loading onto the page', async () => {
     setup();
-    const header = screen.findByRole('header', '/loading/i');
+    const header = await screen.findByRole('header', '/loading/i');
     expect(header).toBeInTheDocument();
   })
 })
