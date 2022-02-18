@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, NavLink } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
 
@@ -30,8 +30,9 @@ const Main = styled.main`
 `
 const Left = styled.section`
   display: flex;
+  flex-direction: column;
+  padding: 1rem;
   width: 300px;
-  justify-content: flex-start;
 `
 
 const Center = styled.section`
@@ -55,10 +56,19 @@ function App() {
         <Header location={useLocation().pathname} />
       </Navigation>
         <Main>
-          <Left>Left Content</Left>
+          <Left>
+            <p>Quick Navigation</p>
+            <ul>
+              <li><NavLink to="/">Schedule</NavLink></li>
+              <li><NavLink to="/about">Developers</NavLink></li>
+              <li><NavLink to="/admin">Administration</NavLink></li>
+            </ul>
+          </Left>
           <Center>
             <Routes>
               <Route path="/" element={<Loading />} />
+              <Route path="/about" element={<Loading />} />
+              <Route path="/admin" element={<Loading />} />
             </Routes>
           </Center>
           <Right>PIX</Right>
