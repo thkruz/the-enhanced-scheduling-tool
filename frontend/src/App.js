@@ -78,7 +78,7 @@ function App() {
               <li><NavLink to="/about">Developers</NavLink></li>
               <li><NavLink to="/admin">Administration</NavLink></li>
             </ul>
-            <span>Roster (just placeholders)</span>
+            <span>Roster</span>
             <ul>
               { data && data.map( (member) => <li><Link to={`/user/${member.id}`}>{member.name}</Link></li> )}
             </ul>
