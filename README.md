@@ -1,5 +1,6 @@
 ## Overall Application
-This is a large project that we are not going to finish by the end of project #2
+This is a largee project that we are not going to finish by the end of project #2. Project #2 focuses on the frontend aspect, while taking into account the rubric/standards of the instructors. Future projects will be concerned more with the backend, etc.
+
 ### Problem Statement:
 Developing a schedule for a team is time consuming and often leads to errors that can impact people's pay and sleep. We need a tool that will allow the creation of schedules that respects people's leave requests, TDY requirements, and other unavailability rules. The tool should allow the regeneration of schedules with only the minimum amount of changes required to accomadate the new unavailability requests.
 
