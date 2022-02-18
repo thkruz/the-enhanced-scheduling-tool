@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
