@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const baseUrl = 'http://localhost:3001/';
 
 const useFetch = urlRoute => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [err, setErr] = useState(null);
   const [load, setLoad] = useState(true);
 
@@ -16,10 +16,7 @@ const useFetch = urlRoute => {
           throw new Error('Cannot convert response to json');
         }
       })
-      .then(json => {
-        console.warn(json);
-        return setData(json);
-      })
+      .then(json => setData(json))
       .catch(e => setErr(e))
       .finally(() => setLoad(false));
   }, [urlRoute]);
