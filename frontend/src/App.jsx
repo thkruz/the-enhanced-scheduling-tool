@@ -8,10 +8,10 @@ import About from './pages/About/About';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
 import { Container } from './components/Container';
-import { Navigation } from './Navigation';
-import { Main } from './Main';
-import { Left } from './Left';
-import { Center } from './Center';
+import { Navigation } from './components/Navigation';
+import { Main } from './components/Main';
+import { Left } from './components/Left';
+import { Center } from './components/Center';
 import { Right } from './components/Right';
 
 const App = () => {
