@@ -1,0 +1,6 @@
+export const SERVER_PORT = 3001;
+export const ERRORS = {
+  INVALID_INPUT: 400,
+  NOT_FOUND: 404,
+  INTERNAL_ERROR: 500,
+};
