@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/tkbdsi/sdi-blended-project2-scaffold/issues"
   },
-  "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme",
-  "dependencies": {
-    "eslint": "^8.9.0"
-  }
+  "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme"
 }

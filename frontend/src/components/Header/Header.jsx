@@ -1,4 +1,5 @@
 import React from 'react';
+import { RuxGlobalStatusBar } from '@astrouxds/react';
 
 const getPageTitle = location => {
   switch (location) {
@@ -15,9 +16,15 @@ const getPageTitle = location => {
 
 const Header = ({ location }) => {
   return (
-    <div>
-      <h1 style={{ textAlign: 'center' }}>{getPageTitle(location)}</h1>
-    </div>
+    <RuxGlobalStatusBar
+      style={{ backgroundColor: 'var(--color-global-tertiary-800)' }}
+      dataTestid="heading"
+      include-icon="true"
+      app-domain="TEST"
+      app-name={getPageTitle(location)}
+      app-version="1.0.0"
+      menu-icon="apps"
+    ></RuxGlobalStatusBar>
   );
 };
 

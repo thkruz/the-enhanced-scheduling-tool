@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@mui/material": "^5.4.1",
+    "@astrouxds/astro-web-components": "^6.2.0",
+    "@astrouxds/react": "^6.2.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -18,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom --transformIgnorePatterns 'node_modules/(?!(@astrouxds/react)/)'",
     "test:unit": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint src"
@@ -53,8 +55,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "jest": "^27.5.1"
   }
 }
