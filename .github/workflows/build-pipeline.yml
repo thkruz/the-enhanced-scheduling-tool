@@ -68,7 +68,7 @@ jobs:
         run: cd frontend && npm ci --ignore-scripts
       # Run ESLint
       - name: ESLint
-        run: cd frontend && npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx
+        run: cd frontend && npm run lint
   unit-tests:
     needs: compliance
     name: Unit Tests
