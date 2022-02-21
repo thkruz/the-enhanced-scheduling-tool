@@ -37,7 +37,6 @@ const useFetch = (urlRoute, method, options) => {
       })
       .then(response => {
         if (response.ok) {
-          console.warn(response.json());
           return response.json();
         } else {
           throw new Error('Cannot convert response to json');
