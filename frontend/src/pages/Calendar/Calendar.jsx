@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import Loading from "../../components/Loading/Loading";
 import useFetch from "../../utils/useFetch/useFetch";
 
@@ -14,7 +14,7 @@ const Calendar = () => {
   const { data, err, load } = useFetch('roster','POST',{'start': 1, 'end': 31});
 
   useEffect(() => {
-    console.log(data);
+    console.log(data, err, load);
   }, [data]);
 
   return (
