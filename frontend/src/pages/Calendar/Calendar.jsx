@@ -15,7 +15,7 @@ const Calendar = () => {
 
   useEffect(() => {
     console.log(data, err, load);
-  }, [data]);
+  }, [data, err, load]);
 
   return (
     <>
