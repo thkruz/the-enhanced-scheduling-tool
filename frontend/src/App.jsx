@@ -5,7 +5,7 @@ import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
-import Calendar from './pages/About/Calendar';
+import Calendar from './pages/Calendar/Calendar';
 import About from './pages/About/About';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
@@ -17,7 +17,7 @@ import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
 
 const App = () => {
-  const { data, err, load } = useFetch('roster');
+  const { data, err, load } = useFetch('roster','GET');
 
   useEffect(() => {
     console.log(data);
