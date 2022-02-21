@@ -50,7 +50,7 @@ const App = () => {
             {data &&
               data.map(member => (
                 <li>
-                  <Link to={`/user/${member.id}`}>{member.name}</Link>
+                  <Link to={`/user/${member.id}`}>{member.first} {member.last}</Link>
                 </li>
               ))}
           </ul>
