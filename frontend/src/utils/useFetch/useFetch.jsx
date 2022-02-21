@@ -50,7 +50,7 @@ const useFetch = (urlRoute, method, options) => {
       setErr(new Error(`fetch by ${method} was unsucessful`));
       setLoad(true);
     }
-  }, [urlRoute, method, options]);
+  }, [urlRoute]);
 
   return { data, err, load };
 };
