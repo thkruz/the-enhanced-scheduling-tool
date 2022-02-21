@@ -20,13 +20,11 @@ const wiggle = keyframes`
 `
 
 const WiggleHeader = styled.h3`
-  animation: 5.0s linear ${wiggle} infinite;
-  span:nth-child(2) {
-    animation-delay: 4s;
-  }
-  span:nth-child(3) {
-    animation-delay: 8s;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  animation: 2.0s linear ${wiggle} infinite;
 `
 
 export default function Loading() {
