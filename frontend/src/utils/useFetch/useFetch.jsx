@@ -2,13 +2,18 @@ import { useState, useEffect } from 'react';
 
 const baseUrl = 'http://localhost:3001/';
 
+/**
+ * urlRoute: a string -> examples: '', 'roster', 'calendar'
+ * method: a string -> examples: 'GET', 'POST', 'PUT', 'DELETE
+ * options: an object -> example {'start': 1, 'end': 7}
+ */
 const useFetch = (urlRoute, method, options) => {
   const [data, setData] = useState([]);
   const [err, setErr] = useState(null);
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    if (method === 'GET') {
+    if (method.toLowerCase() === 'get') {
       fetch(baseUrl + urlRoute)
       .then(response => {
         if (response.ok) {
@@ -21,10 +26,18 @@ const useFetch = (urlRoute, method, options) => {
       .catch(e => setErr(e))
       .finally(() => setLoad(false));
     }
-    else if (method === 'POST') {
-      fetch(baseUrl + urlRoute)
+    if (method.toLowerCase() === 'post') {
+      fetch(baseUrl + urlRoute, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(options)
+      })
       .then(response => {
         if (response.ok) {
+          console.warn(response.json());
           return response.json();
         } else {
           throw new Error('Cannot convert response to json');
