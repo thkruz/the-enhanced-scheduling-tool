@@ -9,12 +9,12 @@ import Calendar from './pages/About/Calendar';
 import About from './pages/About/About';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
-import { Container } from './components/Container';
-import { Navigation } from './components/Navigation';
-import { Main } from './components/Main';
-import { Left } from './components/Left';
-import { Center } from './components/Center';
-import { Right } from './components/Right';
+import { Container } from './components/StyledComponents/Container';
+import { Navigation } from './components/StyledComponents/Navigation';
+import { Main } from './components/StyledComponents/Main';
+import { Left } from './components/StyledComponents/Left';
+import { Center } from './components/StyledComponents/Center';
+import { Right } from './components/StyledComponents/Right';
 
 const App = () => {
   const { data, err, load } = useFetch('roster');
