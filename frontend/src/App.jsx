@@ -17,7 +17,7 @@ import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
 
 const App = () => {
-  const { data, err, load } = useFetch('roster','GET');
+  const { data, err, load } = useFetch('roster');
 
   useEffect(() => {
     console.log(data);
