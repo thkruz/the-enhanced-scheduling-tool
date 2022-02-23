@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import MemberDay from './MemberDay';
 
-
-let memberObj =
+ 
+let memberObj = {}
 
 describe('MemberDay', () => {
     beforeEach( () => {
@@ -11,16 +11,15 @@ describe('MemberDay', () => {
         );
     });
     it('should show 3 shifts per day', () => {
-
-        expect(screen.getAllByRole('listitem', {  name: /day/i})).toBeInTheDocument();
-        expect(screen.getAllByRole('listitem', {  name: /swing/i})).toBeInTheDocument();
-        expect(screen.getAllByRole('listitem', {  name: /mid/i})).toBeInTheDocument();
+        //console.log(screen.getAllByRole('listitem'));
+        expect(screen.getAllByRole('listitem', {  name: /Day/i})).toBeInTheDocument();
+        expect(screen.getAllByRole('listitem', {  name: /Swing/i})).toBeInTheDocument();
+        expect(screen.getAllByRole('listitem', {  name: /Mid/i})).toBeInTheDocument();
     });
 
     it('should fill in entry with red background if unavailable', () => {
-        const memberDayCard = screen.getByTestId('member-day-card');
-        
-        expect(screen.getByRole('heading', {  name: /Scheduling App/i})).toBeInTheDocument();
+        const memberDayContainer = screen.getByTestId('member-day-container');
+        expect(memberDayContainer.toHaveStyle(`backgroundColor: 'red'`));
     });
 
     it('should update memberObj to unavailable if clicked', () => {

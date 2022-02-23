@@ -1,9 +1,27 @@
 import React from 'react';
 
-const MemberDay = ({ location }) => {
+var day_background='';
+
+const set_availability = (member_object, date) => {
+  if (member_object.nonavail.find(date)) {
+    day_background='';
+    return
+  }
+  else{
+    member_object.nonavail.push(date);
+    day_background='red'
+    return
+  }
+}
+
+const MemberDay = ({ member, date }) => {
   return (
-    <div>
-      <h1>hello!</h1>
+    <div style={{ backgroundColor: 'red' }} onClick={() => set_availability(member, date)}>
+      <ul>
+        <li>Day</li>
+        <li>Swing</li>
+        <li>Mid</li>
+      </ul>
     </div>
   );
 };
