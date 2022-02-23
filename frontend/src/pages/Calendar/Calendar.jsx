@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import Loading from "../../components/Loading/Loading";
 
 import useFetch from "../../utils/useFetch/useFetch";
@@ -28,7 +28,8 @@ const DayPlaceholder = ({day}) => {
 }
 
 const Calendar = () => {
-  const [view, setView] = useState('monthly');
+  //const [view, setView] = useState('monthly');
+  const view = "monthly";
   //const [data, setData] = useState([]);
   //const [err, setError] = useState(null);
   // data will hold an array of objects
