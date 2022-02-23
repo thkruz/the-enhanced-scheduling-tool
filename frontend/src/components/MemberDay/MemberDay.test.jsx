@@ -1,25 +1,37 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import MemberDay from './MemberDay';
-
+import '@testing-library/jest-dom/extend-expect';
  
-let memberObj = {}
+let memberObj = {
+    "id": 1,
+    "first": "John",
+    "last": "Doe",
+    "preference": "day",
+    "nonavail": [
+      17,
+      14,
+      25,
+      11
+    ]
+  };
 
 describe('MemberDay', () => {
     beforeEach( () => {
         render (
-            <MemberDay currentDate={new Date(2022,1,1)} member={memberObj}/>
+            <MemberDay member={memberObj} date={'123'}/>
         );
     });
     it('should show 3 shifts per day', () => {
-        //console.log(screen.getAllByRole('listitem'));
-        expect(screen.getAllByRole('listitem', {  name: /Day/i})).toBeInTheDocument();
-        expect(screen.getAllByRole('listitem', {  name: /Swing/i})).toBeInTheDocument();
-        expect(screen.getAllByRole('listitem', {  name: /Mid/i})).toBeInTheDocument();
+        expect(screen.getByText('Day')).toBeInTheDocument();
+        expect(screen.getByText('Swing')).toBeInTheDocument();
+        expect(screen.getByText('Mid')).toBeInTheDocument();
+        expect(screen.getAllByRole('listitem').length).toBe(3);
     });
 
     it('should fill in entry with red background if unavailable', () => {
         const memberDayContainer = screen.getByTestId('member-day-container');
-        expect(memberDayContainer.toHaveStyle(`backgroundColor: 'red'`));
+        fireEvent.click(memberDayContainer);
+        expect(memberDayContainer).toHaveStyle(`backgroundColor: 'red'`);
     });
 
     it('should update memberObj to unavailable if clicked', () => {
