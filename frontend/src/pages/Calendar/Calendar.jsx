@@ -40,7 +40,10 @@ const Calendar = () => {
   if (data.length <= 0) return <Loading />
 
   return (
-    <>
+    <article>
+          <button disabled style={{padding: "1rem"}}>Download Schedule as CSV</button>
+          <br />
+          <br />
           <section style={{display: "flex"}}>
           { data.map( (entry, idx) => <DayPlaceholder key={idx} day={entry.dayKey} />)}
           {/* {
@@ -52,7 +55,7 @@ const Calendar = () => {
             )).slice(0,6)
           } */}
           </section> 
-    </>
+    </article>
   )
 }
 
