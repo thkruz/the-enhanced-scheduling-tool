@@ -23,7 +23,7 @@
     "test": "react-scripts test --env=jsdom --transformIgnorePatterns 'node_modules/(?!(@astrouxds/react)/)'",
     "test:unit": "react-scripts test --watchAll=false --coverage --env=jsdom --transformIgnorePatterns 'node_modules/(?!(@astrouxds/react)/)'",
     "eject": "react-scripts eject",
-    "lint": "npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx"    
+    "lint": "npx eslint . --ignore-path .gitignore --ext js,mjs,cjs,jsx"
   },
   "prettier": {
     "transform": true,
@@ -58,10 +58,6 @@
     ]
   },
   "devDependencies": {
-    "@cypress/react": "^5.12.3",
-    "@cypress/webpack-dev-server": "^1.8.1",
-    "@cypress/webpack-preprocessor": "^5.11.1",
-    "cypress": "^9.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "html-webpack-plugin": "^5.5.0"
   }
