@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Loading from './components/Loading/Loading';
 import Calendar from './pages/Calendar/Calendar';
+import UserDetails from './pages/UsersDetails/UsersDetails';
 import About from './pages/About/About';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
@@ -20,9 +21,6 @@ const App = () => {
   const { data, err, load } = useFetch('roster');
 
   useEffect(() => {
-    console.log(data);
-    console.log(err);
-    console.log(load);
   }, [data, err, load]);
 
   return (
@@ -53,11 +51,13 @@ const App = () => {
                   <Link to={`/user/${member.id}`}>{member.first} {member.last}</Link>
                 </li>
               ))}
+            {useLocation().pathname === '/admin' && <li>+ Add New Member</li> }
           </ul>
         </Left>
         <Center>
           <Routes>
             <Route path="/" element={<Calendar />} />
+            <Route path="/user/:id" element={<UserDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Loading />} />
           </Routes>

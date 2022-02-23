@@ -11,7 +11,7 @@ describe('Header', () => {
     expect(screen.getByTestId('heading', { name: /Admin Page/i })).toBeInTheDocument();
   });
   it('should display the Member Availability page title', () => {
-    render(<Header location="/user" />);
+    render(<Header location="/user/2" />);
     expect(screen.getByTestId('heading', { name: /Member Availability/i })).toBeInTheDocument();
   });
   it('should display about title', () => {
