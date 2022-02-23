@@ -16,12 +16,13 @@ let memberObj = {
   };
 
 describe('MemberDay', () => {
-    beforeEach( () => {
+    const setup = () => {
         render (
             <MemberDay member={memberObj} date={'123'}/>
         );
-    });
+    };
     it('should show 3 shifts per day', () => {
+        setup();
         expect(screen.getByText('Day')).toBeInTheDocument();
         expect(screen.getByText('Swing')).toBeInTheDocument();
         expect(screen.getByText('Mid')).toBeInTheDocument();
@@ -29,6 +30,7 @@ describe('MemberDay', () => {
     });
 
     it('should update memberObj to unavailable if clicked', () => {
+        setup();
         expect(screen.getByRole('heading', {  name: /Status:/i})).toBeInTheDocument();
         const memberDayContainer = screen.getByTestId('member-day-container');
         fireEvent.click(memberDayContainer);
@@ -38,6 +40,7 @@ describe('MemberDay', () => {
     });
 
     it('should fill in entry with red background if unavailable', () => {
+        setup();
         const memberDayContainer = screen.getByTestId('member-day-container');
         fireEvent.click(memberDayContainer);
         expect(memberDayContainer).toHaveStyle(`backgroundColor: 'red'`);
