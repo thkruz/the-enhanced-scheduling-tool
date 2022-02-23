@@ -9,7 +9,7 @@
 
 /** @typedef {Member[]} Roster */
 /** @typedef {CalendarDay[]} Calendar */
-/** @typedef {Date} DayKey - Date object set to 00:00:00 UTC on that day */
+/** @typedef {number} DayKey - number of ms since 1 Jan 2022 00:00:00 UTC */
 
 // NOTE: To create a DayKey use the following logic:
 // const dateObj = new Date();
