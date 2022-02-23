@@ -32,6 +32,9 @@ describe('testing the UserDetals on the /users/:id route', () => {
     expect( await screen.findByTestId('select')).toBeInTheDocument();
   });
 
-
+  it('should display a calendar component', () => {
+    setup();
+    expect(screen.getByRole('article')).toBeInTheDocument();
+  })
 
 });
