@@ -28,13 +28,21 @@ describe('MemberDay', () => {
         expect(screen.getAllByRole('listitem').length).toBe(3);
     });
 
+    it('should update memberObj to unavailable if clicked', () => {
+        expect(screen.getByRole('heading', {  name: /Status:/i})).toBeInTheDocument();
+        const memberDayContainer = screen.getByTestId('member-day-container');
+        fireEvent.click(memberDayContainer);
+        expect(screen.getByRole('heading', {  name: /Status: Unavailable/i})).toBeInTheDocument();
+        fireEvent.click(memberDayContainer);
+        expect(screen.getByRole('heading', {  name: /Status: Available/i})).toBeInTheDocument();
+    });
+
     it('should fill in entry with red background if unavailable', () => {
         const memberDayContainer = screen.getByTestId('member-day-container');
         fireEvent.click(memberDayContainer);
         expect(memberDayContainer).toHaveStyle(`backgroundColor: 'red'`);
+        fireEvent.click(memberDayContainer);
+        expect(memberDayContainer).toHaveStyle(`backgroundColor: ''`);
     });
 
-    it('should update memberObj to unavailable if clicked', () => {
-        expect(screen.getAllByRole('listitem', {  name: /Status: Unavailable/i})).toBeInTheDocument();
-    });
 });
