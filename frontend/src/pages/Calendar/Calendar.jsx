@@ -3,15 +3,32 @@ import Loading from "../../components/Loading/Loading";
 
 import useFetch from "../../utils/useFetch/useFetch";
 
+import styled from "styled-components";
+
+const CalendarMonthlyLayout = styled.section`
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  grid-template-rows: repeat(5,1fr);
+  padding: 5px;
+  border: 1px solid red;
+`
+
+const CalendarDayCard = styled.div`
+  min-width: 100px;
+  height: auto;
+  border: 1px solid black;
+`
+
 const DayPlaceholder = ({day}) => {
   return (
-    <div>
+    <CalendarDayCard>
       <h3>Day {day}</h3>
-    </div>
+    </CalendarDayCard>
   )
 }
 
 const Calendar = () => {
+  const [view, setView] = useState('monthly');
   //const [data, setData] = useState([]);
   //const [err, setError] = useState(null);
   // data will hold an array of objects
@@ -41,21 +58,19 @@ const Calendar = () => {
   if (data.length <= 0) return <Loading />
 
   return (
-    <article>
+    <article style={{width: "100%"}}>
           <button disabled style={{padding: "1rem"}}>Download</button>
           <br />
           <br />
-          <section style={{display: "flex"}}>
-          { data.map( (entry, idx) => <DayPlaceholder key={idx} day={entry.dayKey} />)}
-          {/* {
-            data.map( (day, idx) => (
-              <div key={idx} style={{margin: "0px 3px", padding: "4px", border: "thin solid black", width: "6vw"}}>
-                <p>{day.dayKey}</p>
-                Shift: {day.shift}
-              </div>
-            )).slice(0,6)
-          } */}
-          </section> 
+          {
+            view === "monthly" 
+          ?
+          <CalendarMonthlyLayout>
+           { data.map( (entry, idx) => <DayPlaceholder key={idx} day={entry.dayKey} />)}
+          </CalendarMonthlyLayout>
+           :
+            <p>View does not yet exist.</p>
+          }
     </article>
   )
 }
