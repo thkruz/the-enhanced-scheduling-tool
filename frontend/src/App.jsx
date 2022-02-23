@@ -55,6 +55,7 @@ const App = () => {
                   <Link to={`/user/${member.id}`}>{member.first} {member.last}</Link>
                 </li>
               ))}
+            {useLocation().pathname === '/admin' && <li>+ Add New Member</li> }
           </ul>
         </Left>
         <Center>
