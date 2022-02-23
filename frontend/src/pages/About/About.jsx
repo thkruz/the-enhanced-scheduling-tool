@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-
-`
-
 const List = styled.article`
   display: flex;
   flex-direction: row;
@@ -22,7 +16,7 @@ const Card = styled.div`
   margin: 0 0.5rem;
   border-radius: 10px;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
-  background: #F5F9FB;
+  background-color: black;
   width: 300px;
   padding: 1rem;
   margin: 1rem;
@@ -31,17 +25,17 @@ const Card = styled.div`
 const developers = [
   {
     "id": 1,
-    "name": "Tony Kelly",
-    "github": "tkbdsi",
-    "link": "https://github.com/tkbdsi",
-    "tag": null
-  },
-  {
-    "id": 2,
     "name": "Theodore Kruczek",
     "github": "thkruz",
     "link": "https://github.com/thkruz",
     "tag": "📡 Constantly working on something related to satellite operations. I enjoy making space concepts accessible to everyone through JavaScript and TypeScript."
+  },
+  {
+    "id": 2,
+    "name": "Tony Kelly",
+    "github": "tkbdsi",
+    "link": "https://github.com/tkbdsi",
+    "tag": "Making fullstack apps to wrap around ML/AI to make science available for the non-scientist. Personal projects in gamification 🎮 through React and iOS."
   },
   {
     "id": 3,
@@ -55,8 +49,9 @@ const developers = [
 export default function About() {
 
   return (
-    <Container>
-      <p>The following developers contributed to the development of this application.</p>
+    <div>
+      <p style={{padding: "1rem"}}>This is a Test Bed for the Enhanced Scheduling App. Only approved products are allowed for scheduling and displaying workforce availability, which incldues a mix of printed Excel sheets, Microsoft Office Calendars, or even Sharepoint Calenders, across a wide range of User bases. This application seeks to decouple the myriad routes and offer a new one stop shop that is fast, reliable, and doesn't require the purchase and maintenance of third party corporations to make it work.</p>
+      <p style={{padding: "1rem"}}>The following developers contributed to the development of this application.</p>
       <List>
         {developers.map( (developer) => {
           return (
@@ -68,7 +63,7 @@ export default function About() {
           )
         })}
       </List>
-    </Container>
+    </div>
   )
 
 }
