@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Loading from "../../components/Loading/Loading";
-import useFetch from "../../utils/useFetch/useFetch";
+//import useFetch from "../../utils/useFetch/useFetch";
 
 const Calendar = () => {
   const [data, setData] = useState([]);
