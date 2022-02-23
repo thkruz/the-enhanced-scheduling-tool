@@ -106,7 +106,7 @@ describe('unit tests for the Loading component', () => {
 
   test('it should display at least one day of schedule', async () => {
     setup();
-    const day1 = await screen.findByRole('heading', {  name: /1/i})
+    const day1 = await screen.findByText("Day 1");
     expect(day1).toBeInTheDocument();
   })
 
