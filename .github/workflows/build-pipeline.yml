@@ -142,6 +142,9 @@ jobs:
       # Build
       - name: Build
         run: npm run build:frontend
+      # Remove Node Modules
+      - name: Build
+        run: cd frontend && rm -rf node_modules
       # Save
       - name: Save build folder
         uses: actions/upload-artifact@v2
