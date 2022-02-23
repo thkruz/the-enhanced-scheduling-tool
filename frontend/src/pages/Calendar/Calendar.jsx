@@ -9,20 +9,39 @@ const CalendarMonthlyLayout = styled.section`
   display: grid;
   grid-template-columns: repeat(7,1fr);
   grid-template-rows: repeat(5,1fr);
-  padding: 5px;
-  border: 1px solid red;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
 `
 
 const CalendarDayCard = styled.div`
-  min-width: 100px;
   height: auto;
   border: 1px solid black;
 `
 
-const DayPlaceholder = ({day}) => {
+const ShiftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const Shift = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
+
+const DayPlaceholder = ({day,shift1,shift2,shift3}) => {
+  console.log(day);
+  console.log(shift1);
   return (
     <CalendarDayCard>
-      <h3>Day {day}</h3>
+      <ShiftContainer>
+        {day}
+        {shift1.map( (member,idx) => <Shift key={idx}>{member.first} {member.last}</Shift>)}
+        <hr />
+        {shift2.map( (member,idx) => <Shift key={idx}>{member.first} {member.last}</Shift>)}
+        <hr />
+        {shift3.map( (member,idx) => <Shift key={idx}>{member.first} {member.last}</Shift>)}
+      </ShiftContainer>
     </CalendarDayCard>
   )
 }
@@ -67,7 +86,14 @@ const Calendar = () => {
             view === "monthly" 
           ?
           <CalendarMonthlyLayout>
-           { data.map( (entry, idx) => <DayPlaceholder key={idx} day={entry.dayKey} />)}
+            { 
+              data.map( (entry, idx) => <DayPlaceholder 
+                key={idx} day={entry.dayKey} 
+                shift1={entry.shift1.members} 
+                shift2={entry.shift2.members} 
+                shift3={entry.shift3.members} 
+                />)
+            }
           </CalendarMonthlyLayout>
            :
             <p>View does not yet exist.</p>
