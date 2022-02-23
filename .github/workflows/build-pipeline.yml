@@ -214,6 +214,6 @@ jobs:
           wait-on: "http://127.0.0.1:3000"
           wait-on-timeout: "120"
           record: false
-          spec: frontend/cypress/integration/*
+          spec: cypress/integration/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
