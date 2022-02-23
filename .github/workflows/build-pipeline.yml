@@ -203,6 +203,9 @@ jobs:
       # Build
       - name: Build
         run: npm run build:frontend
+      # Install Cypress
+      - name: Install Cypress 📥
+        run: npm i cypress
       # Cypress
       - name: Cypress install
         uses: cypress-io/github-action@v2
