@@ -26,10 +26,22 @@ const UserDetails = () => {
     let date = new Date(new Date().setUTCHours(0,0,0,0));
     let calendar_date = date;
     let days = [];
+    // render two days from previous month
+    calendar_date.setUTCDate(date.getUTCDate() -2);
+    days.push(new Date(date));
+    calendar_date.setUTCDate(calendar_date.getUTCDate() + 1);
+    days.push(new Date(date));
+    calendar_date.setUTCDate(calendar_date.getUTCDate() + 1);
+    // render days of the current month + 1
     while (calendar_date.getUTCMonth() < date.getUTCMonth()) {
-      days.push(new Date(date));
-      date.setUTCDate(date.getUTCDate() + 1);
+      console.log(calendar_date);
+      days.push(new Date(calendar_date));
+      calendar_date.setUTCDate(calendar_date.getUTCDate() + 1);
     }
+    // render second day from next month
+    days.push(new Date(date));
+    calendar_date.setUTCDate(calendar_date.getUTCDate() + 1);
+    
     let member_days = [];
     for (let day of days) {
       member_days.push([member_obj,day]);
