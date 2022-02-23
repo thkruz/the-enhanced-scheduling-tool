@@ -21,9 +21,6 @@ const App = () => {
   const { data, err, load } = useFetch('roster');
 
   useEffect(() => {
-    console.log(data);
-    console.log(err);
-    console.log(load);
   }, [data, err, load]);
 
   return (
