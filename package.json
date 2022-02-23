@@ -13,6 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/tkbdsi/sdi-blended-project2-scaffold.git"
   },
+  "eslintConfig": {
+    "extends": [
+      "plugin:cypress/recommended"
+    ]
+  },
   "prettier": {
     "transform": true,
     "printWidth": 120,
