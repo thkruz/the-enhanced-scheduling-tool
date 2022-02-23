@@ -7,11 +7,14 @@ const Calendar = () => {
   const [err, setError] = useState(null);
   // data will hold an array of objects
   //  each object has:
-  //    id: number
-  //    first: string
-  //    last: string
-  //    preference: string
-  //    nonavail: array of numbers
+  //    dayKey: int
+  //    shift: string
+  //    members: array of objects
+  //      id: number
+  //      first: string
+  //      last: string
+  //      preference: string
+  //      nonavail: array of numbers
   //const { data, err, load } = useFetch('calendar?start=1&end=1');
 
   useEffect(() => {
@@ -28,29 +31,22 @@ const Calendar = () => {
 
   return (
     <>
-    <Loading />
+      {
+        data.length > 0 
+        ? 
+          <div style={{display: "flex"}}>
+          {
+            data.map( (day, idx) => (
+              <div key={idx} style={{margin: "0px 3px", padding: "4px", border: "thin solid black", width: "6vw"}}>
+                <p>{day.dayKey}</p>
+                Shift: {day.shift}
+              </div>
+            )).slice(0,6)
+          }
+          </div> 
+        : 
+          <Loading />}
     </>
-    // <>
-    //   {
-    //     data.length > 0 
-    //     ? 
-    //       <div style={{display: "flex"}}>
-    //       {
-    //         data.map( (entry, idx) => (
-    //           <div key={idx} style={{margin: "0px 3px", padding: "4px", border: "thin solid black", width: "6vw"}}>
-    //             <p>{entry.first} {entry.last}</p>
-    //             Preference: {entry.preference}
-    //             <br />
-    //             <br />
-    //             Not Avail:
-    //             {entry.nonavail.map( (date, idx2) => <li key={idx2}>{date}</li>)}
-    //           </div>
-    //         ))
-    //       }
-    //       </div> 
-    //     : 
-    //       <Loading />}
-    // </>
   )
 }
 
