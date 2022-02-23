@@ -24,10 +24,6 @@ describe('MemberDay', () => {
     });
 
     it('should update memberObj to unavailable if clicked', () => {
-
-    });
-
-    it('should update a the member state with their availability that day', () => {
-        expect(screen.getByRole('heading', {  name: /Scheduling App/i})).toBeInTheDocument();
+        expect(screen.getAllByRole('listitem', {  name: /Status: Unavailable/i})).toBeInTheDocument();
     });
 });
