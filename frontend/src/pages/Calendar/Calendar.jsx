@@ -2,6 +2,14 @@ import React, {useState, useEffect} from "react";
 import Loading from "../../components/Loading/Loading";
 //import useFetch from "../../utils/useFetch/useFetch";
 
+const DayPlaceholder = ({day}) => {
+  return (
+    <div>
+      <h3>Day {day}</h3>
+    </div>
+  )
+}
+
 const Calendar = () => {
   const [data, setData] = useState([]);
   const [err, setError] = useState(null);
@@ -25,28 +33,29 @@ const Calendar = () => {
   }, []);
 
   useEffect(() => {
-    console.log(data);
-    console.log(err);
+    //console.log(data);
+    //console.log(err);
   }, [data, err]);
 
+  if (data.length <= 0) return <Loading />
+
   return (
-    <>
-      {
-        data.length > 0 
-        ? 
-          <div style={{display: "flex"}}>
-          {
+    <article>
+          <button disabled style={{padding: "1rem"}}>Download Schedule as CSV</button>
+          <br />
+          <br />
+          <section style={{display: "flex"}}>
+          { data.map( (entry, idx) => <DayPlaceholder key={idx} day={entry.dayKey} />)}
+          {/* {
             data.map( (day, idx) => (
               <div key={idx} style={{margin: "0px 3px", padding: "4px", border: "thin solid black", width: "6vw"}}>
                 <p>{day.dayKey}</p>
                 Shift: {day.shift}
               </div>
             )).slice(0,6)
-          }
-          </div> 
-        : 
-          <Loading />}
-    </>
+          } */}
+          </section> 
+    </article>
   )
 }
 
