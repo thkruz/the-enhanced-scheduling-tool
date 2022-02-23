@@ -142,16 +142,6 @@ jobs:
       # Build
       - name: Build
         run: npm run build:frontend
-      # Remove Node Modules
-      - name: Build
-        run: cd frontend && rm -rf node_modules
-      # Save
-      - name: Save build folder
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          if-no-files-found: error
-          path: frontend
   trufflehog:
     needs: build
     name: TruffleHog
@@ -185,15 +175,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
-
-      - name: Download the build folders
-        uses: actions/download-artifact@v2
+      # Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          name: build
-          path: frontend
-
+          node-version: "17"
+      # Get Node Modules from Cache
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-
+            ${{ env.cache-name }}-
+            ${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      # Ensure Node Modules Setup
+      - name: Install Dependencies
+        run: cd frontend && npm ci --ignore-scripts
+      # Build
+      - name: Build
+        run: npm run build:frontend
+      # Cypress
       - name: Cypress install
         uses: cypress-io/github-action@v2
         with:
