@@ -169,3 +169,51 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  cypress:
+    needs: [trufflehog]
+    name: Cypress
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      # Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+      # Get Node Modules from Cache
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-
+            ${{ env.cache-name }}-
+            ${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      # Ensure Node Modules Setup
+      - name: Install Dependencies
+        run: cd frontend && npm ci --ignore-scripts
+      # Build
+      - name: Build
+        run: npm run build:frontend
+      # Install Cypress
+      - name: Install Cypress 📥
+        run: npm i cypress
+      # Cypress
+      - name: Cypress install
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run start:frontend
+          wait-on: "http://127.0.0.1:3000"
+          wait-on-timeout: "120"
+          record: false
+          spec: cypress/integration/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

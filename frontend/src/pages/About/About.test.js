@@ -1,18 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import About from './About';
 
 describe('testing the Developers on the /about route', () => {
-
   const setup = () => {
-    render (
-      <About />
-    );
-  }
+    render(<About />);
+  };
 
   it('should display some text', async () => {
     setup();
-    expect( await screen.findByText('The following developers contributed to the development of this application.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('The following developers contributed to the development of this application.')
+    ).toBeInTheDocument();
   });
-
 });

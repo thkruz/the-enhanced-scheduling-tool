@@ -5,12 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "cd frontend && npm run start",
     "build:frontend": "cd frontend && npm run build",
     "test:frontend": "cd frontend && npm run test:unit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tkbdsi/sdi-blended-project2-scaffold.git"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:cypress/recommended"
+    ]
   },
   "prettier": {
     "transform": true,
@@ -29,5 +35,11 @@
   "bugs": {
     "url": "https://github.com/tkbdsi/sdi-blended-project2-scaffold/issues"
   },
-  "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme"
+  "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme",
+  "devDependencies": {
+    "@cypress/react": "^5.12.3",
+    "@cypress/webpack-dev-server": "^1.8.1",
+    "@cypress/webpack-preprocessor": "^5.11.1",
+    "cypress": "^9.5.0"
+  }
 }
