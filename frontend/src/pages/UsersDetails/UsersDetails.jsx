@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { RuxOption, RuxSelect } from '../../../node_modules/@astrouxds/react/dist/components';
 import Loading from '../../components/Loading/Loading';
 import useFetch from '../../utils/useFetch/useFetch';
+import Calendar from '../Calendar/Calendar';
 
 const UserDetails = () => {
 
@@ -21,6 +22,21 @@ const UserDetails = () => {
 
   if (load) return <Loading />
 
+  const array_of_member_days = (member_obj) => {
+    let date = new Date(new Date().setUTCHours(0,0,0,0));
+    let calendar_date = date;
+    let days = [];
+    while (calendar_date.getUTCMonth() < date.getUTCMonth()) {
+      days.push(new Date(date));
+      date.setUTCDate(date.getUTCDate() + 1);
+    }
+    let member_days = [];
+    for (let day of days) {
+      member_days.push([member_obj,day]);
+    }
+    return member_days
+  }
+
   return (
     <div>
       <p>{user.first}</p>
@@ -38,6 +54,9 @@ const UserDetails = () => {
         <RuxOption value="swing" label="Swing" data-testid='select-option'/>
         <RuxOption value="mid" label="Mid" data-testid='select-option'/>
       </RuxSelect>
+      <div>
+        <Calendar day_obj_array={array_of_member_days(user)}/>
+      </div>
     </div>
   )
 
