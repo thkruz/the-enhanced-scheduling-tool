@@ -3,8 +3,6 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import UsersDetails from './UsersDetails';
 
-import roster from '../../../../server/roster.json'
-
 describe('testing the UserDetals on the /users/:id route', () => {
 
   const setup = () => {
