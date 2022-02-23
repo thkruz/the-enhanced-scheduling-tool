@@ -7,6 +7,8 @@ import { CalendarDayCard } from "../../components/StyledComponents/CalendaryDayC
 import { ShiftContainer } from "../../components/StyledComponents/ShiftContainer";
 import { Shift } from "../../components/StyledComponents/Shift";
 
+import MemberDay from "../../components/MemberDay/MemberDay";
+
 import useFetch from "../../utils/useFetch/useFetch";
 
 const DayPlaceholder = ({day,shift1,shift2,shift3}) => {
@@ -26,7 +28,7 @@ const DayPlaceholder = ({day,shift1,shift2,shift3}) => {
   )
 }
 
-const Calendar = () => {
+const Calendar = ({ day_array }) => {
   //const [view, setView] = useState('monthly');
   const view = "monthly";
   const { data, err, load } = useFetch('calendar?start=1&end=31');
@@ -47,14 +49,19 @@ const Calendar = () => {
             view === "monthly" 
           ?
           <CalendarMonthlyLayout>
+            {console.log(`Day Array: ${day_array}`)}
             { 
-              data.map( (entry, idx) => <DayPlaceholder 
+              /*data.map( (entry, idx) => <DayPlaceholder 
                 key={idx} 
                 day={entry.dayKey} 
                 shift1={entry.shift1.members} 
                 shift2={entry.shift2.members} 
                 shift3={entry.shift3.members} 
                 />)
+                */
+               day_array.map((day_element, idx) =>
+                 <MemberDay key={idx} member={day_element[0]} date={day_element[1]} />
+               )
             }
           </CalendarMonthlyLayout>
            :

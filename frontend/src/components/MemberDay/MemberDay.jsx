@@ -28,6 +28,7 @@ const MemberDay = ({ member, date }) => {
   return (
     <div style={{ backgroundColor: day_background }} onClick={() => set_availability(member, date)} data-testid="member-day-container">
       <ul>
+        {date.getDate()}
         <h3>
           {`Status: ${availability_status}`}
         </h3>

@@ -59,7 +59,7 @@ const App = () => {
         </Left>
         <Center>
           <Routes>
-            <Route path="/" element={<Calendar />} />
+            <Route path="/" element={<Calendar day_array={[]} />} />
             <Route path="/user/:id" element={<UserDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Loading />} />
