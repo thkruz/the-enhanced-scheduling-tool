@@ -16,8 +16,6 @@ import { Left } from './components/StyledComponents/Left';
 import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
 
-import MemberDay from './components/MemberDay/MemberDay';
-
 const App = () => {
   const { data, err, load } = useFetch('roster');
 
