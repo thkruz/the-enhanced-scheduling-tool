@@ -7,11 +7,11 @@ const MemberDay = ({ member, date }) => {
   const [day_background, set_day_background] = useState('');
   const [availability_status, set_availability_status] = useState('');
 
-  const set_availability = (member_object, date) => {
-    let date_index = member_object.nonavail.indexOf(date);
-    if (date_index != -1) {
+  const set_availability = (member_object, date_val) => {
+    let date_index = member_object.nonavail.indexOf(date_val);
+    if (date_index !== -1) {
       // found date in list, set availability to free and remove from list
-      member_object.nonavail = member_object.nonavail.filter((el) => (el != date));
+      member_object.nonavail = member_object.nonavail.filter((el) => (el !== date_val));
       set_day_background('');
       set_availability_status('Available');
       return
