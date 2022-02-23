@@ -21,6 +21,7 @@ const App = () => {
   const { data, err, load } = useFetch('roster');
 
   useEffect(() => {
+    // Intentionally left blank
   }, [data, err, load]);
 
   return (
@@ -48,10 +49,12 @@ const App = () => {
             {data &&
               data.map(member => (
                 <li key={member.id}>
-                  <Link to={`/user/${member.id}`}>{member.first} {member.last}</Link>
+                  <Link to={`/user/${member.id}`}>
+                    {member.first} {member.last}
+                  </Link>
                 </li>
               ))}
-            {useLocation().pathname === '/admin' && <li>+ Add New Member</li> }
+            {useLocation().pathname === '/admin' && <li>+ Add New Member</li>}
           </ul>
         </Left>
         <Center>
