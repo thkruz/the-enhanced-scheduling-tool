@@ -91,10 +91,11 @@ const roster = [
 ];
 
 for (const member of roster) {
-  member.nonavail.push(Math.floor(Math.random() * 31));
-  member.nonavail.push(Math.floor(Math.random() * 31));
-  member.nonavail.push(Math.floor(Math.random() * 31));
-  member.nonavail.push(Math.floor(Math.random() * 31));
+  const JAN1 = new Date('1/1/2022').setUTCHours(0, 0, 0, 0);
+  member.nonavail.push(JAN1 + 1000 * 60 * 60 * 24 * Math.floor(Math.random() * 31));
+  member.nonavail.push(JAN1 + 1000 * 60 * 60 * 24 * Math.floor(Math.random() * 31));
+  member.nonavail.push(JAN1 + 1000 * 60 * 60 * 24 * Math.floor(Math.random() * 31));
+  member.nonavail.push(JAN1 + 1000 * 60 * 60 * 24 * Math.floor(Math.random() * 31));
 }
 
 fs.writeFileSync('roster.json', JSON.stringify(roster, null, 2));
@@ -103,9 +104,9 @@ const generateCalendar = (roster, start, end) => {
   const calendar = [];
   let crewIndex = 0;
   for (let i = start; i <= end; i++) {
-    const dayCrew = roster.filter((member) => member.preference === 'day');
-    const swingCrew = roster.filter((member) => member.preference === 'swing');
-    const midCrew = roster.filter((member) => member.preference === 'mid');
+    const dayCrew = roster.filter(member => member.preference === 'day');
+    const swingCrew = roster.filter(member => member.preference === 'swing');
+    const midCrew = roster.filter(member => member.preference === 'mid');
 
     /** @type {CalendarDay} */
     const calendarDay = {
@@ -127,23 +128,17 @@ const generateCalendar = (roster, start, end) => {
       },
     };
 
-    if (calendarDay.shift1.members[0].nonavail.includes(calendarDay.dayKey))
-      calendarDay.shift1.isConflict = true;
+    if (calendarDay.shift1.members[0].nonavail.includes(calendarDay.dayKey)) calendarDay.shift1.isConflict = true;
     calendarDay.isConflict = true;
-    if (calendarDay.shift1.members[1].nonavail.includes(calendarDay.dayKey))
-      calendarDay.shift1.isConflict = true;
+    if (calendarDay.shift1.members[1].nonavail.includes(calendarDay.dayKey)) calendarDay.shift1.isConflict = true;
     calendarDay.isConflict = true;
-    if (calendarDay.shift2.members[0].nonavail.includes(calendarDay.dayKey))
-      calendarDay.shift2.isConflict = true;
+    if (calendarDay.shift2.members[0].nonavail.includes(calendarDay.dayKey)) calendarDay.shift2.isConflict = true;
     calendarDay.isConflict = true;
-    if (calendarDay.shift2.members[1].nonavail.includes(calendarDay.dayKey))
-      calendarDay.shift2.isConflict = true;
+    if (calendarDay.shift2.members[1].nonavail.includes(calendarDay.dayKey)) calendarDay.shift2.isConflict = true;
     calendarDay.isConflict = true;
-    if (calendarDay.shift3.members[0].nonavail.includes(calendarDay.dayKey))
-      calendarDay.shift3.isConflict = true;
+    if (calendarDay.shift3.members[0].nonavail.includes(calendarDay.dayKey)) calendarDay.shift3.isConflict = true;
     calendarDay.isConflict = true;
-    if (calendarDay.shift3.members[1].nonavail.includes(calendarDay.dayKey))
-      calendarDay.shift3.isConflict = true;
+    if (calendarDay.shift3.members[1].nonavail.includes(calendarDay.dayKey)) calendarDay.shift3.isConflict = true;
     calendarDay.isConflict = true;
 
     calendar.push(calendarDay);
