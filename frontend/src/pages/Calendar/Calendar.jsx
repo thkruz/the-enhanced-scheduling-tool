@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Loading from "../../components/Loading/Loading";
-//import useFetch from "../../utils/useFetch/useFetch";
+
+import useFetch from "../../utils/useFetch/useFetch";
 
 const DayPlaceholder = ({day}) => {
   return (
@@ -11,8 +12,8 @@ const DayPlaceholder = ({day}) => {
 }
 
 const Calendar = () => {
-  const [data, setData] = useState([]);
-  const [err, setError] = useState(null);
+  //const [data, setData] = useState([]);
+  //const [err, setError] = useState(null);
   // data will hold an array of objects
   //  each object has:
   //    dayKey: int
@@ -23,19 +24,19 @@ const Calendar = () => {
   //      last: string
   //      preference: string
   //      nonavail: array of numbers
-  //const { data, err, load } = useFetch('calendar?start=1&end=1');
+  const { data, err, load } = useFetch('calendar?start=1&end=31');
 
-  useEffect(() => {
-    fetch('http://localhost:3001/calendar?start=1&end=31')
-    .then( response => response.json())
-    .then(json => setData(json))
-    .catch(e => setError(e));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/calendar?start=1&end=31')
+  //   .then( response => response.json())
+  //   .then(json => setData(json))
+  //   .catch(e => setError(e));
+  // }, []);
 
   useEffect(() => {
     //console.log(data);
     //console.log(err);
-  }, [data, err]);
+  }, [data, err, load]);
 
   if (data.length <= 0) return <Loading />
 
