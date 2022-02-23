@@ -22,4 +22,10 @@ describe('testing the UserDetals on the /users/:id route', () => {
     expect( await screen.findByText('John')).toBeInTheDocument();
   });
 
+  it('should display the last name of the user', async () => {
+    setup();
+    expect(screen.getByRole('heading', {name: /loading/i})).toBeInTheDocument();
+    expect( await screen.findByText('Doe')).toBeInTheDocument();
+  });
+
 });
