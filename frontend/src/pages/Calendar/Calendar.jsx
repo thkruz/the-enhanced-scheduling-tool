@@ -41,7 +41,7 @@ const Calendar = () => {
 
   return (
     <article>
-          <button disabled style={{padding: "1rem"}}>Download Schedule as CSV</button>
+          <button disabled style={{padding: "1rem"}}>Download</button>
           <br />
           <br />
           <section style={{display: "flex"}}>
