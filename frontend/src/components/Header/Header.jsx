@@ -2,12 +2,13 @@ import React from 'react';
 import { RuxGlobalStatusBar } from '@astrouxds/react';
 
 const getPageTitle = location => {
-  switch (location) {
-    case '/about':
+
+  switch (true) {
+    case /\/about/.test(location):
       return 'Developer Info';
-    case '/user':
+    case /\/user*/.test(location):
       return 'Member Availability';
-    case '/admin':
+    case /\/admin/.test(location):
       return 'Admin Page';
     default:
       return 'Scheduling App';
