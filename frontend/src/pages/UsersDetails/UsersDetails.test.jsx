@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import UsersDetails from './UsersDetails';
 
@@ -27,5 +28,13 @@ describe('testing the UserDetals on the /users/:id route', () => {
     expect(screen.getByRole('heading', {name: /loading/i})).toBeInTheDocument();
     expect( await screen.findByText('Doe')).toBeInTheDocument();
   });
+
+  it('should have a select menu', async () => {
+    setup();
+    expect(screen.getByRole('heading', {name: /loading/i})).toBeInTheDocument();
+    expect( await screen.findByRole('menu')).toBeInTheDocument();
+  });
+
+
 
 });
