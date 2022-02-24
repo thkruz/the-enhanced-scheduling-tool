@@ -1,6 +1,6 @@
 //@ts-check
 
-import React, { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
@@ -16,13 +16,18 @@ import { Main } from './components/StyledComponents/Main';
 import { Left } from './components/StyledComponents/Left';
 import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
+import { SchedulerContext } from './SchedulerContext';
 
 const App = () => {
-  const { data, err, load } = useFetch('roster');
+  const { data: rosterData, err: rosterErr, load: rosterLoad } = useFetch('roster');
+  // TODO: Replace with a real fetch request
+  const { data: calendarData, err: calendarErr, load: calendarLoad } = useFetch('test/start/1/end/31');
+  const scheduler = useContext(SchedulerContext);
 
   useEffect(() => {
-    // Intentionally left blank
-  }, [data, err, load]);
+    scheduler.roster = rosterData;
+    scheduler.calendar = calendarData;
+  }, [scheduler, rosterData, calendarData]);
 
   return (
     <Container>
@@ -46,8 +51,8 @@ const App = () => {
           </ul>
           <span>Roster</span>
           <ul>
-            {data &&
-              data.map(member => (
+            {rosterData &&
+              rosterData.map(member => (
                 <li key={member.id}>
                   <Link to={`/user/${member.id}`}>
                     {member.first} {member.last}
