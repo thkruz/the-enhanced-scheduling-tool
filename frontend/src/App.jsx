@@ -1,6 +1,6 @@
 //@ts-check
 
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
