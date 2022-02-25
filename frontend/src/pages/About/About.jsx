@@ -30,7 +30,12 @@ const About = () => {
     ).then( data => setDevs(data));
   },[])
 
-  if (devs.length <= 0) return <Loading />;
+  if (devs.length <= 0) return (
+      <div>
+        <p>Either loading resources from GitHub or your internet connect is offline.</p>
+        <Loading />
+      </div>
+    );
 
   if (rateLimited) return (
     <div>
