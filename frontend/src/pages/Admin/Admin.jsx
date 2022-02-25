@@ -9,6 +9,11 @@ const Admin = () => {
 
     console.log(scheduler);
 
+
+    const handleDataUpload = () => {
+        alert('This button uploads a new schedule');
+    }
+
     const handleExportData = () => {
         alert('This button exports the current schedule');
     }
@@ -17,20 +22,16 @@ const Admin = () => {
         alert('This button removes a user from roster');
     }
 
-    const handleAddNewMember = () => {
-        alert('This button adds a new user to the roster');
-    }
-
     return (
         <AdminContainer>
             <Spacing>
-                <RuxButton data-testid="data-testid-ud">Upload Data</RuxButton>
+                <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Data</RuxButton>
             </Spacing>
             <Spacing>
-                <RuxButton data-testid="data-testid-ed">Export Data</RuxButton>
+                <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Data</RuxButton>
             </Spacing>
             <Spacing>
-                <RuxButton data-testid="data-testid-ru">Remove User</RuxButton>
+                <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton>
             </Spacing>
         </AdminContainer>
     )

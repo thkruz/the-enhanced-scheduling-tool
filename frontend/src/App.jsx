@@ -30,9 +30,9 @@ const App = () => {
     scheduler.calendar = calendarData;
   }, [scheduler, rosterData, calendarData]);
 
-  const handleDataUpload = () => {
-    alert('This button uploads a new schedule');
-  }
+  const handleAddNewMember = () => {
+    alert('This button adds a new user to the roster');
+  } 
 
   return (
     <Container>
