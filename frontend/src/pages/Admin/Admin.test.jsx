@@ -7,7 +7,9 @@ describe('testing the Administration on the /admin route', () => {
 
   const setup = () => {
     render(
-        <Admin />
+        <BrowserRouter>
+            <Admin />
+        </BrowserRouter>
     );
   };
 
