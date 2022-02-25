@@ -23,6 +23,12 @@ describe('testing the Administration on the /admin route', () => {
     expect(foundButton).toBeInTheDocument();
   });
 
+  it('should have a button to represent adding a new user', async () => {
+    setup();
+    const foundButton = await screen.findByTestId('data-testid-au');
+    expect(foundButton).toBeInTheDocument();
+  });
+
   it('should have a button to represent removing a user', async () => {
     setup();
     const foundButton = await screen.findByTestId('data-testid-ru');
