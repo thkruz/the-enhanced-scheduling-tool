@@ -26,6 +26,12 @@ describe('testing the Administration on the /admin route', () => {
     expect(foundButton).toBeInTheDocument();
   });
 
+  it('should have a button to represent removing a user', async () => {
+    setup();
+    const foundButton = await screen.findByRole('button', {name: /Remove User/i});
+    expect(foundButton).toBeInTheDocument();
+  });
+
 //   it('should have the text to represent exporting current data', async () => {
 //     setup();
 //     const textToFind = "+ Add New Member";
