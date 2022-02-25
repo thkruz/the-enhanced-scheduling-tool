@@ -13,7 +13,7 @@ describe('testing the Administration Add New User component', () => {
 
   it('should have a field to enter a first name', async () => {
     setup();
-    const foundInput = await screen.findByRole('input', {name: /enter first name/i});
+    const foundInput = await screen.findByPlaceholderText('Enter First Name');
     expect(foundInput).toBeInTheDocument();
   });
 
