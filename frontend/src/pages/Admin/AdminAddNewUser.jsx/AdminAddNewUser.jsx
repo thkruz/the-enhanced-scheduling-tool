@@ -1,9 +1,17 @@
 import React from 'react';
-import { RuxInput, RuxRadioGroup, RuxRadio } from '../../../../node_modules/@astrouxds/react/dist/components';
+import { RuxInput, RuxRadioGroup, RuxRadio, RuxButton } from '../../../../node_modules/@astrouxds/react/dist/components';
+
+import styled from 'styled-components';
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
+
 const AdminAddNewUser = () => {
 
     return (
-        <form>
+        <Form>
             <RuxInput type="text" placeholder="Enter First Name"/>
             <RuxInput type="text" placeholder="Enter Last Name"/>
             <RuxRadioGroup data-testid="data-testid-radio">
@@ -11,7 +19,10 @@ const AdminAddNewUser = () => {
                 <RuxRadio>Swing</RuxRadio>
                 <RuxRadio>Mid</RuxRadio>
             </RuxRadioGroup>
-        </form>
+            <RuxButton>
+                Save New User
+            </RuxButton>
+        </Form>
     )
 }
 
