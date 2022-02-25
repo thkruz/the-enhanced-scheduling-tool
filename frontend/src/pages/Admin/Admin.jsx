@@ -10,6 +10,7 @@ const Admin = () => {
 
     return (
         <div style={{width: "90%", padding: "1rem"}}>
+            <RuxButton data-testid="data-testid-ud">Upload Data</RuxButton>
             <RuxButton data-testid="data-testid-ru">Remove User</RuxButton>
         </div>
     )
