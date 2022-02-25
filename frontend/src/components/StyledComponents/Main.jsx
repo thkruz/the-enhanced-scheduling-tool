@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Main = styled.main`
   display: flex;
   flex-direction: row;
-  wrap: no-wrap;
+  flex-grow: 1;
   width: 100%;
+  wrap: no-wrap;
   padding: 20px;
-  height: 100%;
 `;

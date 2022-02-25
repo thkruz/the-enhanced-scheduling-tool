@@ -2,13 +2,14 @@ import React, {useContext} from 'react';
 import { SchedulerContext } from '../../SchedulerContext';
 import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
 import {AdminContainer, Padding, VerticalSpacer} from './AdminStyles';
+import Loading from '../../components/Loading/Loading';
+import Calendar from '../Calendar/Calendar';
 
 const Admin = () => {
 
     const scheduler = useContext(SchedulerContext);
 
     console.log(scheduler);
-
 
     const handleDataUpload = () => {
         alert('This button uploads a new schedule');
@@ -37,7 +38,7 @@ const Admin = () => {
                     </Padding>
                 </div>
                 <div>
-                   <p>Calendar Here</p> 
+                   { (scheduler.roster.length === 0) ? <Loading /> : <Calendar /> } 
                 </div>
             </VerticalSpacer>
 
