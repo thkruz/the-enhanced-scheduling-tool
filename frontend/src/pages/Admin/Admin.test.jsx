@@ -23,19 +23,19 @@ describe('testing the Administration on the /admin route', () => {
 
   it('should have a button to represent uploading new data', async () => {
     setup();
-    const foundButton = await screen.findTestId('data-testid-ud', {name: /Upload Data/i});
+    const foundButton = await screen.findByTestId('data-testid-ud');
     expect(foundButton).toBeInTheDocument();
   });
 
   it('should have a button to represent exporting current data', async () => {
     setup();
-    const foundButton = await screen.findTestId('data-testid-ed', {name: /Export Data/i});
+    const foundButton = await screen.findByTestId('data-testid-ed');
     expect(foundButton).toBeInTheDocument();
   });
 
   it('should have a button to represent removing a user', async () => {
     setup();
-    const foundButton = await screen.findTestId('data-testid-ru', {name: /remove user/i});
+    const foundButton = await screen.findByTestId('data-testid-ru');
     expect(foundButton).toBeInTheDocument();
   });
 
