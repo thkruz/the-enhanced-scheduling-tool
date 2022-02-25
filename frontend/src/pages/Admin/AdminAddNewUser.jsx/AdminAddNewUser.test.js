@@ -23,4 +23,10 @@ describe('testing the Administration Add New User component', () => {
     expect(foundInput).toBeInTheDocument();
   });
 
+  it('should allow selecting a shift preference', async () => {
+    setup();
+    const foundInput = await screen.findByRole('radio');
+    expect(foundInput).toBeInTheDocument();
+  });
+
 });
