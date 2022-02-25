@@ -22,7 +22,7 @@ import { SchedulerContext } from './SchedulerContext';
 const App = () => {
   const { data: rosterData, err: rosterErr, load: rosterLoad } = useFetch('roster');
   // TODO: Replace with a real fetch request
-  const { data: calendarData, err: calendarErr, load: calendarLoad } = useFetch('test/start/1/end/31');
+  const { data: calendarData, err: calendarErr, load: calendarLoad } = useFetch('calendar?start=1&end=31');
   const scheduler = useContext(SchedulerContext);
 
   useEffect(() => {
