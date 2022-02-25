@@ -32,18 +32,4 @@ describe('testing the Administration on the /admin route', () => {
     expect(foundButton).toBeInTheDocument();
   });
 
-//   it('should have the text to represent exporting current data', async () => {
-//     setup();
-//     const textToFind = "+ Add New Member";
-//     const findText = await screen.findByText(textToFind);
-//     expect(findText).toBeInTheDocument();
-//   });
-
-//   it('should have the text to represent removing a user', async () => {
-//     setup();
-//     const textToFind = "+ Add New Member";
-//     const findText = await screen.findByText(textToFind);
-//     expect(findText).toBeInTheDocument();
-//   });
-
 });
