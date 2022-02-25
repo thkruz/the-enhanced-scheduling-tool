@@ -11,6 +11,7 @@ import About from './pages/About/About';
 import Admin from './pages/Admin/Admin';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
+import { RuxButton } from '../node_modules/@astrouxds/react/dist/components';
 import { Container } from './components/StyledComponents/Container';
 import { Navigation } from './components/StyledComponents/Navigation';
 import { Main } from './components/StyledComponents/Main';
@@ -64,7 +65,7 @@ const App = () => {
                   </Link>
                 </li>
               ))}
-            {useLocation().pathname === '/admin' && <li>+ Add New Member</li>}
+            {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>}
           </ul>
         </Left>
         <Center>
