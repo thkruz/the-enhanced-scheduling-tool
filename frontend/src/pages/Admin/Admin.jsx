@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { SchedulerContext } from '../../SchedulerContext';
 import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
-import {AdminContainer, Spacing} from './AdminStyles';
+import {AdminContainer, Padding, VerticalSpacer} from './AdminStyles';
 
 const Admin = () => {
 
@@ -24,15 +24,23 @@ const Admin = () => {
 
     return (
         <AdminContainer>
-            <Spacing>
-                <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Data</RuxButton>
-            </Spacing>
-            <Spacing>
-                <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Data</RuxButton>
-            </Spacing>
-            <Spacing>
-                <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton>
-            </Spacing>
+            <VerticalSpacer>
+                <div>
+                    <Padding>
+                        <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Data</RuxButton>
+                    </Padding>
+                    <Padding>
+                        <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Data</RuxButton>
+                    </Padding>
+                    <Padding>
+                        <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton>
+                    </Padding>
+                </div>
+                <div>
+                   <p>Calendar Here</p> 
+                </div>
+            </VerticalSpacer>
+
         </AdminContainer>
     )
 }
