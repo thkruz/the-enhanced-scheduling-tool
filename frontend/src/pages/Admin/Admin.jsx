@@ -19,6 +19,10 @@ const Admin = () => {
         alert('This button exports the current schedule');
     }
 
+    const handleAddNewUser = () => {
+        alert('This button adds a new user to the roster');
+    }
+
     const handleRemoveUser = () => {
         alert('This button removes a user from roster');
     }
@@ -32,6 +36,9 @@ const Admin = () => {
                     </Padding>
                     <Padding>
                         <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Data</RuxButton>
+                    </Padding>
+                    <Padding>
+                        <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton>
                     </Padding>
                     <Padding>
                         <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton>
