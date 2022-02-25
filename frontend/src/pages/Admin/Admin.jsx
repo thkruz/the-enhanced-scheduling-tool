@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { SchedulerContext } from '../../SchedulerContext';
 import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
+import {AdminContainer, Spacing} from './AdminStyles';
 
 const Admin = () => {
 
@@ -9,11 +10,17 @@ const Admin = () => {
     console.log(scheduler);
 
     return (
-        <div style={{width: "90%", padding: "1rem"}}>
-            <RuxButton data-testid="data-testid-ud">Upload Data</RuxButton>
-            <RuxButton data-testid="data-testid-ed">Export Data</RuxButton>
-            <RuxButton data-testid="data-testid-ru">Remove User</RuxButton>
-        </div>
+        <AdminContainer>
+            <Spacing>
+                <RuxButton data-testid="data-testid-ud">Upload Data</RuxButton>
+            </Spacing>
+            <Spacing>
+                <RuxButton data-testid="data-testid-ed">Export Data</RuxButton>
+            </Spacing>
+            <Spacing>
+                <RuxButton data-testid="data-testid-ru">Remove User</RuxButton>
+            </Spacing>
+        </AdminContainer>
     )
 }
 
