@@ -25,7 +25,7 @@ describe('testing the Administration Add New User component', () => {
 
   it('should allow selecting a shift preference', async () => {
     setup();
-    const foundInput = await screen.findByRole('radio');
+    const foundInput = await screen.findByTestId('data-testid-radio');
     expect(foundInput).toBeInTheDocument();
   });
 
