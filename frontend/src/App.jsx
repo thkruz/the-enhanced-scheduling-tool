@@ -30,6 +30,10 @@ const App = () => {
     scheduler.calendar = calendarData;
   }, [scheduler, rosterData, calendarData]);
 
+  const handleDataUpload = () => {
+    alert('This button uploads a new schedule');
+  }
+
   return (
     <Container>
       <Navigation>

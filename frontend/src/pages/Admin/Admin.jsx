@@ -9,6 +9,18 @@ const Admin = () => {
 
     console.log(scheduler);
 
+    const handleExportData = () => {
+        alert('This button exports the current schedule');
+    }
+
+    const handleRemoveUser = () => {
+        alert('This button removes a user from roster');
+    }
+
+    const handleAddNewMember = () => {
+        alert('This button adds a new user to the roster');
+    }
+
     return (
         <AdminContainer>
             <Spacing>
