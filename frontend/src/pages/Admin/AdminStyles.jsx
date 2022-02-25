@@ -6,7 +6,6 @@ export const AdminContainer = styled.div`
     align-items: flex-start;
     flex-grow: 1;
     padding: 1rem;
-    border: 1px solid red;
 `
 export const Padding = styled.div`
     padding: 0.5rem;
@@ -17,4 +16,5 @@ export const VerticalSpacer = styled.div`
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
+    width: 100%;
 `
