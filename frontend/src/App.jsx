@@ -8,6 +8,7 @@ import Loading from './components/Loading/Loading';
 import Calendar from './pages/Calendar/Calendar';
 import UserDetails from './pages/UsersDetails/UsersDetails';
 import About from './pages/About/About';
+import Admin from './pages/Admin/Admin';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
 import { Container } from './components/StyledComponents/Container';
@@ -67,7 +68,7 @@ const App = () => {
             <Route path="/" element={<Calendar />} />
             <Route path="/user/:id" element={<UserDetails />} />
             <Route path="/about" element={<About />} />
-            <Route path="/admin" element={<Loading />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </Center>
         <Right>PIX</Right>
