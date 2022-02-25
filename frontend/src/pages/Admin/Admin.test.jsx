@@ -1,25 +1,15 @@
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { MemoryRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import App from '../../App';
+import userEvent from '@testing-library/user-event';
+import Admin from './Admin';
 
 describe('testing the Administration on the /admin route', () => {
 
   const setup = () => {
     render(
-        <MemoryRouter initialEntries={['/admin']} initialIndex={1}>
-            <Routes>
-                <Route path="/admin" element={<App />} />
-            </Routes>
-        </MemoryRouter>    
+        <Admin />
     );
   };
-
-  it('should have the option to add a new member displayed', async () => {
-    setup();
-    const textToFind = "+ Add New Member";
-    const findText = await screen.findByText(textToFind);
-    expect(findText).toBeInTheDocument();
-  });
 
   it('should have a button to represent uploading new data', async () => {
     setup();
