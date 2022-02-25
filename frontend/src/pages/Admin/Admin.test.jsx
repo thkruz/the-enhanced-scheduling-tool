@@ -1,10 +1,17 @@
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import Admin from './Admin';
+import App from '../../App';
 
 describe('testing the Administration on the /admin route', () => {
 
   const setup = () => {
-    render(<Admin />);
+    render(
+        <MemoryRouter initialEntries={['/admin']} initialIndex={1}>
+            <Routes>
+                <Route path="/admin" element={<App />} />
+            </Routes>
+        </MemoryRouter>    
+    );
   };
 
   it('should have the option to add a new member displayed', async () => {
