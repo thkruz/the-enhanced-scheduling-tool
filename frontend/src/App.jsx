@@ -1,6 +1,6 @@
 //@ts-check
 
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
@@ -8,8 +8,10 @@ import Loading from './components/Loading/Loading';
 import Calendar from './pages/Calendar/Calendar';
 import UserDetails from './pages/UsersDetails/UsersDetails';
 import About from './pages/About/About';
+import Admin from './pages/Admin/Admin';
 import useFetch from './utils/useFetch/useFetch';
 import { RuxClassificationMarking } from '@astrouxds/react';
+import { RuxButton } from '../node_modules/@astrouxds/react/dist/components';
 import { Container } from './components/StyledComponents/Container';
 import { Navigation } from './components/StyledComponents/Navigation';
 import { Main } from './components/StyledComponents/Main';
@@ -21,13 +23,17 @@ import { SchedulerContext } from './SchedulerContext';
 const App = () => {
   const { data: rosterData, err: rosterErr, load: rosterLoad } = useFetch('roster');
   // TODO: Replace with a real fetch request
-  const { data: calendarData, err: calendarErr, load: calendarLoad } = useFetch('test/start/1/end/31');
+  const { data: calendarData, err: calendarErr, load: calendarLoad } = useFetch('calendar?start=1&end=31');
   const scheduler = useContext(SchedulerContext);
 
   useEffect(() => {
     scheduler.roster = rosterData;
     scheduler.calendar = calendarData;
   }, [scheduler, rosterData, calendarData]);
+
+  const handleAddNewMember = () => {
+    alert('This button adds a new user to the roster');
+  } 
 
   return (
     <Container>
@@ -59,7 +65,7 @@ const App = () => {
                   </Link>
                 </li>
               ))}
-            {useLocation().pathname === '/admin' && <li>+ Add New Member</li>}
+            {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>}
           </ul>
         </Left>
         <Center>
@@ -67,7 +73,7 @@ const App = () => {
             <Route path="/" element={<Calendar />} />
             <Route path="/user/:id" element={<UserDetails />} />
             <Route path="/about" element={<About />} />
-            <Route path="/admin" element={<Loading />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </Center>
         <Right>PIX</Right>
