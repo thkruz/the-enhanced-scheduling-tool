@@ -20,6 +20,12 @@ describe('testing the Administration on the /admin route', () => {
     expect(foundButton).toBeInTheDocument();
   });
 
+  it('should have a button to represent exporting current data', async () => {
+    setup();
+    const foundButton = await screen.findByRole('button', {name: /Export Data/i});
+    expect(foundButton).toBeInTheDocument();
+  });
+
 //   it('should have the text to represent exporting current data', async () => {
 //     setup();
 //     const textToFind = "+ Add New Member";
