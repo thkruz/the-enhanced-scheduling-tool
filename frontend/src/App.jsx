@@ -65,7 +65,7 @@ const App = () => {
                   </Link>
                 </li>
               ))}
-            {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>}
+            {/* {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>} */}
           </ul>
         </Left>
         <Center>
