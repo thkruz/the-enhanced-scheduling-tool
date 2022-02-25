@@ -13,4 +13,25 @@ describe('testing the Administration on the /admin route', () => {
     const findText = await screen.findByText(textToFind);
     expect(findText).toBeInTheDocument();
   });
+
+  it('should have a button to represent uploading new data', async () => {
+    setup();
+    const foundButton = await screen.findByRole('button', {name: /Upload Data/i});
+    expect(foundButton).toBeInTheDocument();
+  });
+
+//   it('should have the text to represent exporting current data', async () => {
+//     setup();
+//     const textToFind = "+ Add New Member";
+//     const findText = await screen.findByText(textToFind);
+//     expect(findText).toBeInTheDocument();
+//   });
+
+//   it('should have the text to represent removing a user', async () => {
+//     setup();
+//     const textToFind = "+ Add New Member";
+//     const findText = await screen.findByText(textToFind);
+//     expect(findText).toBeInTheDocument();
+//   });
+
 });
