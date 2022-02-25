@@ -5,6 +5,7 @@ const AdminAddNewUser = () => {
     return (
         <form>
             <RuxInput type="text" placeholder="Enter First Name"/>
+            <RuxInput type="text" placeholder="Enter Last Name"/>
         </form>
     )
 }
