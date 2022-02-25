@@ -17,4 +17,10 @@ describe('testing the Administration Add New User component', () => {
     expect(foundInput).toBeInTheDocument();
   });
 
+  it('should have a field to enter a last name', async () => {
+    setup();
+    const foundInput = await screen.findByPlaceholderText('Enter Last Name');
+    expect(foundInput).toBeInTheDocument();
+  });
+
 });
