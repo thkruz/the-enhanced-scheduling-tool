@@ -31,7 +31,7 @@ describe('testing the Administration Add New User component', () => {
 
   it('should have a button to submit the add new user form', async () => {
     setup();
-    const foundButton = await screen.findByRole('button');
+    const foundButton = await screen.findByTestId('data-testid-button');
     expect(foundButton).toBeInTheDocument();
   });
 
