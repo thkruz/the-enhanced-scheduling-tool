@@ -1,27 +1,30 @@
 import React, {useState, useContext, useEffect} from "react";
 import { SchedulerContext } from "../../../SchedulerContext";
+import { RuxButton } from "../../../../node_modules/@astrouxds/react/dist/components";
+import styled from "styled-components";
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
 
 const AdminRemoveUser = () => {
 
-    const [memberList, setMemberList] = useState({});
-    const [calendarList, setCalendarList] = useState({});
-
     const scheduler = useContext(SchedulerContext);
 
-    useEffect( () => {
-        setMemberList(scheduler.roster);
-    }, [memberList])
-
-    useEffect( () => {
-        setCalendarList(scheduler.calendar);
-    }, [calendarList])
-
     console.log(scheduler);
-    
+
+    const handleSave = () => {
+        console.log(scheduler);
+
+    }
+
     return (
-        <div>
-            Remove Users
-        </div>
+        <Form>
+            <RuxButton data-testid="data-testid-button" onClick={handleSave}>
+                Remove User(s)
+            </RuxButton>
+        </Form>
     )
 }
 
