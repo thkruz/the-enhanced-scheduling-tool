@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Loading from '../../components/Loading/Loading';
 import { Link, useLocation } from 'react-router-dom';
+import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
 import { CalendarMonthlyLayout } from '../../components/StyledComponents/CalendarMonthlyLayout';
 import { CalendarDayCard } from '../../components/StyledComponents/CalendaryDayCard';
 import { ShiftContainer } from '../../components/StyledComponents/ShiftContainer';
@@ -55,12 +56,12 @@ const Calendar = () => {
   return (
     <article style={{ width: '100%' }}>
         {location === '/' && 
-              <button
+              <RuxButton
               style={{ padding: '1rem' }}
               onClick={() => saveCsv(data, `Schedule_${new Date().getUTCFullYear()}_${new Date().getUTCMonth() + 1}`)}
             >
               Download
-            </button>
+            </RuxButton>
         }
       <br />
       <br />

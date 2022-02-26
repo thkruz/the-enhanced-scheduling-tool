@@ -10,7 +10,7 @@ import { SchedulerContext } from './SchedulerContext';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <SchedulerContext.Provider value={{roster: {}, calendar: {}}}>
+      <SchedulerContext.Provider value={{roster: {}, calendar: {}, counter: 0}}>
        <App />
       </SchedulerContext.Provider>
     </Router>

@@ -26,6 +26,7 @@ const App = () => {
 
   useEffect(() => {
     scheduler.roster = rosterData;
+    scheduler.counter = rosterData.length;
   }, [rosterData]);
 
   useEffect(() => {

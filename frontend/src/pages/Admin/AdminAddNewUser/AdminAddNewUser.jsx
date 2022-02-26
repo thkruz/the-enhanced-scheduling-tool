@@ -20,7 +20,9 @@ const AdminAddNewUser = ({setStatus: updateScreen}) => {
     const navigate = useNavigate();
 
     const handleSave = () => {
-        const newId = scheduler.roster.length + 1;
+        scheduler.counter++;
+        const newId = scheduler.counter;
+        scheduler.counter++;
         const newMember = {
             "id": newId,
             "first": firstName,
