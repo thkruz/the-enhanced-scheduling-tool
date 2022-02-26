@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Loading from '../../components/Loading/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { CalendarMonthlyLayout } from '../../components/StyledComponents/CalendarMonthlyLayout';
 import { CalendarDayCard } from '../../components/StyledComponents/CalendaryDayCard';
 import { ShiftContainer } from '../../components/StyledComponents/ShiftContainer';
@@ -44,6 +44,7 @@ const DayPlaceholder = ({ day, shift1, shift2, shift3 }) => {
 const Calendar = () => {
   const view = 'monthly';
   const { data, err, load } = useFetch('calendar?start=1&end=31');
+  const location = useLocation().pathname;
 
   useEffect(() => {
     // Intentionally left blank
@@ -53,12 +54,14 @@ const Calendar = () => {
 
   return (
     <article style={{ width: '100%' }}>
-      <button
-        style={{ padding: '1rem' }}
-        onClick={() => saveCsv(data, `Schedule_${new Date().getUTCFullYear()}_${new Date().getUTCMonth() + 1}`)}
-      >
-        Download
-      </button>
+        {location === '/' && 
+              <button
+              style={{ padding: '1rem' }}
+              onClick={() => saveCsv(data, `Schedule_${new Date().getUTCFullYear()}_${new Date().getUTCMonth() + 1}`)}
+            >
+              Download
+            </button>
+        }
       <br />
       <br />
       {view === 'monthly' ? (

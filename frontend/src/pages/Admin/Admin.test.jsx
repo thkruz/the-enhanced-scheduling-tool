@@ -7,7 +7,9 @@ describe('testing the Administration on the /admin route', () => {
 
   const setup = () => {
     render(
-        <Admin />
+        <BrowserRouter>
+            <Admin />
+        </BrowserRouter>
     );
   };
 
@@ -20,6 +22,12 @@ describe('testing the Administration on the /admin route', () => {
   it('should have a button to represent exporting current data', async () => {
     setup();
     const foundButton = await screen.findByTestId('data-testid-ed');
+    expect(foundButton).toBeInTheDocument();
+  });
+
+  it('should have a button to represent adding a new user', async () => {
+    setup();
+    const foundButton = await screen.findByTestId('data-testid-au');
     expect(foundButton).toBeInTheDocument();
   });
 
