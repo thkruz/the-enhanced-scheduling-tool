@@ -1,25 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import { RuxOption, RuxSelect } from '../../../node_modules/@astrouxds/react/dist/components';
 import Loading from '../../components/Loading/Loading';
-import useFetch from '../../utils/useFetch/useFetch';
+//import useFetch from '../../utils/useFetch/useFetch';
+import { SchedulerContext } from '../../SchedulerContext';
 
 const UserDetails = () => {
 
   const [user, setUser] = useState({});
 
-  const params = useParams();
-  const { data, err, load } = useFetch(`user/${params.id}`);
+  const scheduler = useContext(SchedulerContext);
 
-  useEffect( () => {
-    setUser(data);
-  }, [data, err, load]);
+  const params = useParams();
+  //const { data, err, load } = useFetch(`user/${params.id}`);
+  // useEffect( () => {
+  //   setUser(data);
+  // }, [data, err, load]);
 
   const handlePrefChange = e => {
     setUser({ ...user, preference: e.target.value });
   };
 
-  if (load) return <Loading />
+  useEffect( () => {
+    const arr = scheduler.roster;
+    const member = arr.filter( item => item.id === Number(params.id))[0];
+    setUser(member);
+  },[])
+  
+  if (scheduler.roster.length === 0) return <Loading />
 
   return (
     <div>

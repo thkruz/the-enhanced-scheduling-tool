@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { SchedulerContext } from '../../SchedulerContext';
 import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
 import {AdminContainer, Padding, VerticalSpacer} from './AdminStyles';
@@ -52,7 +52,7 @@ const Admin = () => {
                 }
 
                 {
-                    status === 'add' && <AdminAddNewUser />
+                    status === 'add' && <AdminAddNewUser setStatus={setStatus}/>
                 }
                 <div>
                    { (scheduler.roster.length === 0) ? <Loading /> : (status === '') ? <Calendar /> : '' } 

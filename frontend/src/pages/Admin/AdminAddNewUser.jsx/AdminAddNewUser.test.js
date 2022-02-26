@@ -35,5 +35,4 @@ describe('testing the Administration Add New User component', () => {
     expect(foundButton).toBeInTheDocument();
   });
 
-
 });

@@ -26,57 +26,60 @@ const App = () => {
 
   useEffect(() => {
     scheduler.roster = rosterData;
+  }, [rosterData]);
+
+  useEffect(() => {
     scheduler.calendar = calendarData;
-  }, [scheduler, rosterData, calendarData]);
+  }, [calendarData]);
 
   const handleAddNewMember = () => {
     alert('This button adds a new user to the roster');
   } 
 
   return (
-    <Container>
-      <Navigation>
-        <RuxClassificationMarking classification="unclassified" />
-        <Header location={useLocation().pathname} />
-      </Navigation>
-      <Main>
-        <Left>
-          <span>Quick Navigation</span>
-          <ul>
-            <li>
-              <NavLink to="/">Schedule</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">Developers</NavLink>
-            </li>
-            <li>
-              <NavLink to="/admin">Administration</NavLink>
-            </li>
-          </ul>
-          <span>Roster</span>
-          <ul>
-            {rosterData &&
-              rosterData.map(member => (
-                <li key={member.id}>
-                  <Link to={`/user/${member.id}`}>
-                    {member.first} {member.last}
-                  </Link>
-                </li>
-              ))}
-            {/* {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>} */}
-          </ul>
-        </Left>
-        <Center>
-          <Routes>
-            <Route path="/" element={<Calendar />} />
-            <Route path="/user/:id" element={<UserDetails />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-        </Center>
-        <Right>PIX</Right>
-      </Main>
-    </Container>
+      <Container>
+        <Navigation>
+          <RuxClassificationMarking classification="unclassified" />
+          <Header location={useLocation().pathname} />
+        </Navigation>
+        <Main>
+          <Left>
+            <span>Quick Navigation</span>
+            <ul>
+              <li>
+                <NavLink to="/">Schedule</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about">Developers</NavLink>
+              </li>
+              <li>
+                <NavLink to="/admin">Administration</NavLink>
+              </li>
+            </ul>
+            <span>Roster</span>
+            <ul>
+              {scheduler.roster.length > 0 &&
+                scheduler.roster.map(member => (
+                  <li key={member.id}>
+                    <Link to={`/user/${member.id}`}>
+                      {member.first} {member.last}
+                    </Link>
+                  </li>
+                ))}
+              {/* {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>} */}
+            </ul>
+          </Left>
+          <Center>
+            <Routes>
+              <Route path="/" element={<Calendar />} />
+              <Route path="/user/:id" element={<UserDetails />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/admin" element={<Admin />} />
+            </Routes>
+          </Center>
+          <Right>PIX</Right>
+        </Main>
+      </Container>
   );
 };
 
