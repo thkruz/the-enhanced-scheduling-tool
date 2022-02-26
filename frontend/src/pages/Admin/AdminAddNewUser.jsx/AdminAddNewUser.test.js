@@ -7,7 +7,9 @@ describe('testing the Administration Add New User component', () => {
 
   const setup = () => {
     render(
-        <AdminAddNewUser />
+        <BrowserRouter>
+            <AdminAddNewUser />
+        </BrowserRouter>
     );
   };
 

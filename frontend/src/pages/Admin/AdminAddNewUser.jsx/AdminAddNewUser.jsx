@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
+import {useNavigate} from 'react-router-dom'
 import { RuxInput, RuxRadioGroup, RuxRadio, RuxButton } from '../../../../node_modules/@astrouxds/react/dist/components';
 import { SchedulerContext } from '../../../SchedulerContext';
 import styled from 'styled-components';
@@ -16,6 +17,8 @@ const AdminAddNewUser = ({setStatus: updateScreen}) => {
 
     const scheduler = useContext(SchedulerContext);
 
+    const navigate = useNavigate();
+
     const handleSave = () => {
         console.log(firstName);
         console.log(lastName);
@@ -31,6 +34,7 @@ const AdminAddNewUser = ({setStatus: updateScreen}) => {
         scheduler.roster = [...scheduler.roster, newMember];
         console.log(scheduler);
         updateScreen('');
+        navigate('/');
     }
 
     return (

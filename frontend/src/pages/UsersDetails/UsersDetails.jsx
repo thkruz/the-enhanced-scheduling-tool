@@ -18,7 +18,9 @@ const UserDetails = () => {
   // }, [data, err, load]);
 
   const handlePrefChange = e => {
-    setUser({ ...user, preference: e.target.value });
+    const arr = scheduler.roster;
+    const member = arr.filter( item => item.id === Number(params.id))[0];
+    member.preference = e.target.value;
   };
 
   useEffect( () => {
