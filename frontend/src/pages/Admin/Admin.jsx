@@ -37,10 +37,10 @@ const Admin = () => {
                     status === '' && 
                     <div>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Data</RuxButton><span>TBD, only alerts</span>
+                            <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Roster Data</RuxButton><span>TBD, only alerts</span>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Data</RuxButton><span>TBD, only alerts</span>
+                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton><span>TBD, only alerts</span>
                         </Padding>
                         <Padding>
                             <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton><span>Completed</span>
