@@ -9,6 +9,7 @@ import UserDetails from './pages/UsersDetails/UsersDetails';
 import About from './pages/About/About';
 import Admin from './pages/Admin/Admin';
 import useFetch from './utils/useFetch/useFetch';
+import { SchedulerContext } from './SchedulerContext';
 import { RuxClassificationMarking } from '@astrouxds/react';
 import { Container } from './components/StyledComponents/Container';
 import { Navigation } from './components/StyledComponents/Navigation';
@@ -16,7 +17,6 @@ import { Main } from './components/StyledComponents/Main';
 import { Left } from './components/StyledComponents/Left';
 import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
-import { SchedulerContext } from './SchedulerContext';
 
 const App = () => {
   const { data: rosterData, err: rosterErr, load: rosterLoad } = useFetch('roster');
@@ -60,7 +60,7 @@ const App = () => {
             <ul>
               {scheduler.roster.length > 0 &&
                 scheduler.roster.map(member => (
-                  <li key={member.id}>
+                  <li key={`${member.first}+${member.last}+${member.id}`}>
                     <Link to={`/user/${member.id}`}>
                       {member.first} {member.last}
                     </Link>

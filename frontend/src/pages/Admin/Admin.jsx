@@ -4,7 +4,8 @@ import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/component
 import {AdminContainer, Padding, VerticalSpacer} from './AdminStyles';
 import Loading from '../../components/Loading/Loading';
 import Calendar from '../Calendar/Calendar';
-import AdminAddNewUser from './AdminAddNewUser.jsx/AdminAddNewUser';
+import AdminAddNewUser from './AdminAddNewUser/AdminAddNewUser';
+import AdminRemoveUser from './AdminRemoveUser/AdminRemoveUser';
 
 const Admin = () => {
     const [status, setStatus] = useState('');
@@ -26,8 +27,7 @@ const Admin = () => {
     }
 
     const handleRemoveUser = () => {
-        alert('This button removes a user from roster');
-        //setStatus('remove');
+        setStatus('remove');
     }
 
     return (
@@ -46,13 +46,16 @@ const Admin = () => {
                             <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton><span>Completed</span>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton><span>TBD, only alerts</span>
+                            <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton><span>Completed</span>
                         </Padding>
                     </div>
                 }
 
                 {
                     status === 'add' && <AdminAddNewUser setStatus={setStatus}/>
+                }
+                {
+                    status === 'remove' && <AdminRemoveUser setStatus={setStatus}/>
                 }
                 <div>
                    { (scheduler.roster.length === 0) ? <Loading /> : (status === '') ? <Calendar /> : '' } 
