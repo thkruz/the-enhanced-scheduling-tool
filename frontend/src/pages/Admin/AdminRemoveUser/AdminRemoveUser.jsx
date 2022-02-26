@@ -12,21 +12,23 @@ const Form = styled.form`
 const AdminRemoveUser = ({setStatus: updateScreen}) => {
 
     const [membersToRemove, setMembersToRemove] = useState([]);
-
     const scheduler = useContext(SchedulerContext);
 
     console.log(scheduler);
 
     const handleSave = (e) => {
-        console.log(e.target.value)
         console.log(scheduler);
         updateScreen('');
     }
 
+    const handleCheckbox = (id) => {
+        console.log(id);
+    }
+
     return (
         <Form>
-            <RuxCheckboxGroup>
-                {scheduler.roster.map(member => <RuxCheckbox name={`checkbox-${member.id}`} key={member.id}>{member.first} {member.last}</RuxCheckbox>)}
+            <RuxCheckboxGroup name="checkboxes">
+                {scheduler.roster.map(member => <RuxCheckbox onInput={() => handleCheckbox(member.id)} key={member.id}>{member.first} {member.last}</RuxCheckbox>)}
             </RuxCheckboxGroup>
             <RuxButton data-testid="data-testid-button" onClick={handleSave}>
                 Remove User(s)
