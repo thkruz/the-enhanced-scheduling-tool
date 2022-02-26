@@ -13,12 +13,6 @@ describe('testing the Administration Remove User component', () => {
     );
   };
 
-  it('should render roster names', async () => {
-    setup();
-    const foundInput = await screen.findByText('John Doe');
-    expect(foundInput).toBeInTheDocument();
-  });
-
   it('should have a button to submit the changes', async () => {
     setup();
     const foundButton = await screen.findByTestId('data-testid-button');
