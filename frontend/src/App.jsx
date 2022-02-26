@@ -60,7 +60,7 @@ const App = () => {
             <ul>
               {scheduler.roster.length > 0 &&
                 scheduler.roster.map(member => (
-                  <li key={member.id}>
+                  <li key={`${member.first}+${member.last}+${member.id}`}>
                     <Link to={`/user/${member.id}`}>
                       {member.first} {member.last}
                     </Link>
