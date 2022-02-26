@@ -17,6 +17,8 @@ const UserDetails = () => {
   //   setUser(data);
   // }, [data, err, load]);
 
+  console.log(params);
+
   const handlePrefChange = e => {
     const arr = scheduler.roster;
     const member = arr.filter( item => item.id === Number(params.id))[0];
@@ -27,7 +29,7 @@ const UserDetails = () => {
     const arr = scheduler.roster;
     const member = arr.filter( item => item.id === Number(params.id))[0];
     setUser(member);
-  },[])
+  },[params])
 
   if (scheduler.roster.length === 0) return <Loading />
 
