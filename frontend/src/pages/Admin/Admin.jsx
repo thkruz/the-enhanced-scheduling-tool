@@ -18,8 +18,12 @@ const Admin = () => {
     }
 
     const handleExportData = () => {
-        alert('This button exports the current schedule');
-       // setStatus('export');
+        const jsonFile = new Blob([JSON.stringify(scheduler.roster)], {type: 'application/json'});
+        const elem = document.createElement('a');
+        elem.setAttribute('href',URL.createObjectURL(jsonFile));
+        elem.download = 'roster.json';
+        elem.click();
+        setStatus('');
     }
 
     const handleAddNewUser = () => {
@@ -37,10 +41,10 @@ const Admin = () => {
                     status === '' && 
                     <div>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Data</RuxButton><span>TBD, only alerts</span>
+                            <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Roster Data</RuxButton><span>TBD, only alerts</span>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Data</RuxButton><span>TBD, only alerts</span>
+                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton><span>TBD, only alerts</span>
                         </Padding>
                         <Padding>
                             <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton><span>Completed</span>
