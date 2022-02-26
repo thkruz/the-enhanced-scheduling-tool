@@ -14,15 +14,29 @@ const AdminRemoveUser = ({setStatus: updateScreen}) => {
     const [membersToRemove, setMembersToRemove] = useState([]);
     const scheduler = useContext(SchedulerContext);
 
-    console.log(scheduler);
+    const navigate = useNavigate();
+
+    console.log(scheduler.calendar);
 
     const handleSave = (e) => {
+        console.log(membersToRemove);
         console.log(scheduler);
+        const newArr = scheduler.roster.filter( item => !membersToRemove.includes(item.id) )
+        scheduler.roster = newArr;
+        const shift1 = scheduler.calendar.filter( day => day.shift1.members.some( person => membersToRemove.includes(person.id)))
+        console.log(shift1);
         updateScreen('');
+        navigate('/');
     }
 
     const handleCheckbox = (id) => {
-        console.log(id);
+        if (membersToRemove.indexOf(id) === -1) setMembersToRemove([...membersToRemove, id]);
+        else {
+            // This is the logic to use if someone is unclicking something clicked
+            const idx = membersToRemove.indexOf(id);
+            const filtered = membersToRemove.filter( item => item !== id);
+            setMembersToRemove(filtered);
+        }
     }
 
     return (
