@@ -1,6 +1,6 @@
 //@ts-check
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
@@ -19,6 +19,7 @@ import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
 
 const App = () => {
+  const [everGrowingRosterSize, setEverGrowingRosterSize] = useState(0);
   const { data: rosterData, err: rosterErr, load: rosterLoad } = useFetch('roster');
   // TODO: Replace with a real fetch request
   const { data: calendarData, err: calendarErr, load: calendarLoad } = useFetch('calendar?start=1&end=31');
@@ -26,6 +27,7 @@ const App = () => {
 
   useEffect(() => {
     scheduler.roster = rosterData;
+    setEverGrowingRosterSize(rosterData.length);
   }, [rosterData]);
 
   useEffect(() => {
