@@ -18,8 +18,12 @@ const Admin = () => {
     }
 
     const handleExportData = () => {
-        alert('This button exports the current schedule');
-       // setStatus('export');
+        const jsonFile = new Blob([JSON.stringify(scheduler.roster)], {type: 'application/json'});
+        const elem = document.createElement('a');
+        elem.setAttribute('href',URL.createObjectURL(jsonFile));
+        elem.download = 'roster.json';
+        elem.click();
+        setStatus('');
     }
 
     const handleAddNewUser = () => {
