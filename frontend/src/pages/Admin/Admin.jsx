@@ -4,7 +4,7 @@ import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/component
 import {AdminContainer, Padding, VerticalSpacer} from './AdminStyles';
 import Loading from '../../components/Loading/Loading';
 import Calendar from '../Calendar/Calendar';
-import AdminAddNewUser from './AdminAddNewUser.jsx/AdminAddNewUser';
+import AdminAddNewUser from './AdminAddNewUser/AdminAddNewUser';
 
 const Admin = () => {
     const [status, setStatus] = useState('');
