@@ -13,12 +13,12 @@ const Admin = () => {
 
     const handleDataUpload = () => {
         alert('This button uploads a new schedule');
-        setStatus('upload');
+        //setStatus('upload');
     }
 
     const handleExportData = () => {
         alert('This button exports the current schedule');
-        setStatus('export');
+       // setStatus('export');
     }
 
     const handleAddNewUser = () => {
@@ -27,7 +27,7 @@ const Admin = () => {
 
     const handleRemoveUser = () => {
         alert('This button removes a user from roster');
-        setStatus('remove');
+        //setStatus('remove');
     }
 
     return (

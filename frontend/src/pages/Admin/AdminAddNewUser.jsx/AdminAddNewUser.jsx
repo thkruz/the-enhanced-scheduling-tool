@@ -31,6 +31,10 @@ const AdminAddNewUser = ({setStatus: updateScreen}) => {
             "preference": preference,
             "nonavail": []
         }
+        if (firstName.length === 0 || lastName.length === 0) {
+            alert('First and Last Name Required!')
+            return;
+        }
         scheduler.roster = [...scheduler.roster, newMember];
         console.log(scheduler);
         updateScreen('');
@@ -41,11 +45,11 @@ const AdminAddNewUser = ({setStatus: updateScreen}) => {
         <Form>
             <label htmlFor='formFirstName' style={{paddingTop: "5px"}}>
                 First Name
-                <RuxInput type="text" placeholder="Enter First Name" id="formFirstName" value={firstName} onInput={(e) => setFirstName(e.target.value)}/>
+                <RuxInput required type="text" placeholder="Enter First Name" id="formFirstName" value={firstName} onInput={(e) => setFirstName(e.target.value)}/>
             </label>
             <label htmlFor='formLastName' style={{paddingTop: "5px"}}>
                 Last Name
-                <RuxInput type="text" placeholder="Enter Last Name" id="formLastName" value={lastName} onInput={(e) => setLastName(e.target.value)}/>
+                <RuxInput required type="text" placeholder="Enter Last Name" id="formLastName" value={lastName} onInput={(e) => setLastName(e.target.value)}/>
             </label>
             <label htmlFor='formPreference' style={{paddingTop: "5px"}}>
                 Shift Preference
