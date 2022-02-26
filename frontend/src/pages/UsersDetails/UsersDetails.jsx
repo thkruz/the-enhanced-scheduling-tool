@@ -4,7 +4,7 @@ import { RuxOption, RuxSelect } from '../../../node_modules/@astrouxds/react/dis
 import Loading from '../../components/Loading/Loading';
 //import useFetch from '../../utils/useFetch/useFetch';
 import { SchedulerContext } from '../../SchedulerContext';
-
+import { AdminContainer } from '../Admin/AdminStyles';
 const UserDetails = () => {
 
   const [user, setUser] = useState({});
@@ -26,11 +26,11 @@ const UserDetails = () => {
     const member = arr.filter( item => item.id === Number(params.id))[0];
     setUser(member);
   },[])
-  
+
   if (scheduler.roster.length === 0) return <Loading />
 
   return (
-    <div>
+    <AdminContainer>
       <p>{user.first}</p>
       <p>{user.last}</p>
       <RuxSelect
@@ -46,7 +46,7 @@ const UserDetails = () => {
         <RuxOption value="swing" label="Swing" data-testid='select-option'/>
         <RuxOption value="mid" label="Mid" data-testid='select-option'/>
       </RuxSelect>
-    </div>
+    </AdminContainer>
   )
 
 }
