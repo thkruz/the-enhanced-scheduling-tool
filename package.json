@@ -4,7 +4,7 @@
   "description": "The Enhanced Scheduling Tool (TEST)",
   "main": "index.js",
   "scripts": {
-    "test": "start-server-and-test start:server 3001 test:frontend",
+    "test": "npx start-server-and-test start:server 3001 test:frontend",
     "start:frontend": "cd frontend && npm run start",
     "start:server": "cd server && node index.mjs",
     "build:frontend": "cd frontend && npm run build",
