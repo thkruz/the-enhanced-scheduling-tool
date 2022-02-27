@@ -14,7 +14,6 @@ const Admin = () => {
 
     const handleDataUpload = () => {
         alert('This button uploads a new schedule');
-        //setStatus('upload');
     }
 
     const handleExportData = () => {
@@ -44,7 +43,7 @@ const Admin = () => {
                             <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Roster Data</RuxButton><span>TBD, only alerts</span>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton><span>TBD, only alerts</span>
+                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton><span>Completed</span>
                         </Padding>
                         <Padding>
                             <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton><span>Completed</span>
