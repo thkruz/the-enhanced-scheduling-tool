@@ -48,7 +48,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "17"
+          node-version: '17'
       # Get Node Modules from Cache
       - name: Cache node modules
         uses: actions/cache@v2
@@ -82,7 +82,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "17"
+          node-version: '17'
       # Get Node Modules from Cache
       - name: Cache node modules
         uses: actions/cache@v2
@@ -104,10 +104,10 @@ jobs:
       - name: Set Timezone
         uses: szenius/set-timezone@v1.0
         with:
-          timezoneLinux: "America/New_York"
+          timezoneLinux: 'America/New_York'
       # Unit Tests
       - name: Test
-        run: npm run test:frontend
+        run: npm run test
   build:
     needs: [eslint, unit-tests]
     name: Build
@@ -121,7 +121,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "17"
+          node-version: '17'
       # Get Node Modules from Cache
       - name: Cache node modules
         uses: actions/cache@v2
@@ -182,7 +182,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "17"
+          node-version: '17'
       # Get Node Modules from Cache
       - name: Cache node modules
         uses: actions/cache@v2
@@ -211,8 +211,8 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm run start:frontend
-          wait-on: "http://127.0.0.1:3000"
-          wait-on-timeout: "120"
+          wait-on: 'http://127.0.0.1:3000'
+          wait-on-timeout: '120'
           record: false
           spec: cypress/integration/*
         env:
