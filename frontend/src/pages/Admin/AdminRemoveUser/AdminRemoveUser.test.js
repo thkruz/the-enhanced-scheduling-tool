@@ -1,15 +1,13 @@
-import { MemoryRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import AdminRemoveUser from './AdminRemoveUser';
 
 describe('testing the Administration Remove User component', () => {
-
   const setup = () => {
     render(
-        <BrowserRouter>
-            <AdminRemoveUser />
-        </BrowserRouter>
+      <BrowserRouter>
+        <AdminRemoveUser />
+      </BrowserRouter>
     );
   };
 
@@ -18,5 +16,4 @@ describe('testing the Administration Remove User component', () => {
     const foundButton = await screen.findByTestId('data-testid-button');
     expect(foundButton).toBeInTheDocument();
   });
-
 });
