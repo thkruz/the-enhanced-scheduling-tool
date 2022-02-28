@@ -43,7 +43,7 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
   
   it('renders four buttons on the page for upload, export, adding user, and removing user', () => {
     navigate_to_admin();
-    cy.get('rux-button').eq(0).shadow().should('have.text','Upload Roster Data');
+    cy.get('rux-button').should('have.length', 4);
   })
 
 })
