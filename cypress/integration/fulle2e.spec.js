@@ -93,6 +93,16 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('form').find('rux-radio').eq(2).invoke('attr', 'value').should('contain', 'mid');
   })
 
+  it('adds a new user to the roster after filling out and submitting the form', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-input').eq(0).invoke('attr','value','Tony');
+    cy.get('form').find('input').eq(0).invoke('attr','value','Tony');
+    cy.get('form').find('rux-input').eq(1).invoke('attr','value','Kelly');
+    cy.get('form').find('input').eq(1).invoke('attr','value','Kelly');
+    cy.get('form').find('rux-button').click();
+  })
+
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
