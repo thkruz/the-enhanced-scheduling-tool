@@ -57,6 +57,7 @@ const Calendar = () => {
     <article style={{ width: '100%' }}>
         {location === '/' && 
               <RuxButton
+              id="downloadButton"
               style={{ padding: '1rem' }}
               onClick={() => saveCsv(data, `Schedule_${new Date().getUTCFullYear()}_${new Date().getUTCMonth() + 1}`)}
             >
