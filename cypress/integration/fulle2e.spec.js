@@ -40,6 +40,11 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.visit('/');
     cy.get('a').eq(2).click();
   }
+
+  it('renders the title Admin Page upon load', () => {
+    navigate_to_admin();
+    cy.get('rux-global-status-bar').shadow().find('h1').should('have.text','TESTADMIN PAGE');
+  })
   
   it('renders four buttons on the page for upload, export, adding user, and removing user', () => {
     navigate_to_admin();
@@ -50,6 +55,12 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     navigate_to_admin();
     cy.get('rux-button').eq(2).click();
     cy.get('form').should('exist');
+  })
+
+  it('has an input field for first name when adding a new user', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-input').eq(0);
   })
 
 })
