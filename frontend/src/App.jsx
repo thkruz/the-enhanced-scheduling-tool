@@ -58,7 +58,7 @@ const App = () => {
             </li>
           </ul>
           <span>Roster</span>
-          <ul>
+          <ul id="rosterList">
             {scheduler.roster.length > 0 &&
               scheduler.roster.map(member => (
                 <li key={`${member.first}+${member.last}+${member.id}`}>
