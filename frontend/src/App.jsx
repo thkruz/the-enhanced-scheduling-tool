@@ -46,7 +46,7 @@ const App = () => {
       <Main>
         <Left>
           <span>Quick Navigation</span>
-          <ul>
+          <ul id="quickNavigationList">
             <li>
               <NavLink to="/">Schedule</NavLink>
             </li>
