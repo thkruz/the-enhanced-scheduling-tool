@@ -46,6 +46,12 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('rux-button').should('have.length', 4);
   })
 
+  it('displays a user form when the 3rd button (add new user is clicked)', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').should('exist');
+  })
+
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
