@@ -12,6 +12,7 @@ const Admin = () => {
 
   const scheduler = useContext(SchedulerContext);
 
+
   const handleDataUpload = () => {
     alert('This button uploads a new schedule');
     //setStatus('upload');
@@ -34,37 +35,26 @@ const Admin = () => {
     setStatus('remove');
   };
 
-  return (
-    <AdminContainer>
-      <VerticalSpacer>
-        {status === '' && (
-          <div>
-            <Padding>
-              <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>
-                Upload Roster Data
-              </RuxButton>
-              <span>TBD, only alerts</span>
-            </Padding>
-            <Padding>
-              <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>
-                Export Roster Data
-              </RuxButton>
-              <span>TBD, only alerts</span>
-            </Padding>
-            <Padding>
-              <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>
-                Add New User
-              </RuxButton>
-              <span>Completed</span>
-            </Padding>
-            <Padding>
-              <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>
-                Remove User
-              </RuxButton>
-              <span>Completed</span>
-            </Padding>
-          </div>
-        )}
+    return (
+        <AdminContainer>
+            <VerticalSpacer>
+                {
+                    status === '' && 
+                    <div>
+                        <Padding>
+                            <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Roster Data</RuxButton><span>TBD, only alerts</span>
+                        </Padding>
+                        <Padding>
+                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton><span>Completed</span>
+                        </Padding>
+                        <Padding>
+                            <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton><span>Completed</span>
+                        </Padding>
+                        <Padding>
+                            <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton><span>Completed</span>
+                        </Padding>
+                    </div>
+                }
 
         {status === 'add' && <AdminAddNewUser setStatus={setStatus} />}
         {status === 'remove' && <AdminRemoveUser setStatus={setStatus} />}
