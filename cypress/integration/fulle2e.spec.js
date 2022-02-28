@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 describe('End-to-End Tests for Enhanced Scheduling App - MAIN ROUTE', () => {
   
   it('renders the title Scheduling App upon load', () => {
@@ -7,7 +6,6 @@ describe('End-to-End Tests for Enhanced Scheduling App - MAIN ROUTE', () => {
     cy.get('rux-global-status-bar').shadow().find('h1').should('have.text','TESTSCHEDULING APP');
   })
 
-  
   it('renders the Quick Navigation list on load', () => {
     cy.visit('/');
     cy.get('#quickNavigationList').find('li').should('have.length', 3);
@@ -37,11 +35,21 @@ describe('End-to-End Tests for Enhanced Scheduling App - DEVELOPER ROUTE', () =>
 
 
 describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
+
+  const navigate_to_admin = () => {
+    cy.visit('/');
+    cy.get('a').eq(2).click();
+  }
   
+  it('renders four buttons on the page for upload, export, adding user, and removing user', () => {
+    navigate_to_admin();
+    cy.get('button').eq(0).should('have.text','Upload Roster Data');
+  })
 
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
+  
   
 
 })
