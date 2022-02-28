@@ -63,6 +63,12 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('form').find('rux-input').eq(0).invoke('attr', 'placeholder').should('contain', 'Enter First Name');
   })
 
+  it('has an input field for last name when adding a new user', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-input').eq(1).invoke('attr', 'placeholder').should('contain', 'Enter Last Name');
+  })
+
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
