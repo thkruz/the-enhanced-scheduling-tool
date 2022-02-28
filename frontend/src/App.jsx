@@ -46,7 +46,7 @@ const App = () => {
       <Main>
         <Left>
           <span>Quick Navigation</span>
-          <ul>
+          <ul id="quickNavigationList">
             <li>
               <NavLink to="/">Schedule</NavLink>
             </li>
@@ -58,7 +58,7 @@ const App = () => {
             </li>
           </ul>
           <span>Roster</span>
-          <ul>
+          <ul id="rosterList">
             {scheduler.roster.length > 0 &&
               scheduler.roster.map(member => (
                 <li key={`${member.first}+${member.last}+${member.id}`}>
