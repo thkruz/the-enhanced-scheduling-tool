@@ -69,6 +69,12 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('form').find('rux-input').eq(1).invoke('attr', 'placeholder').should('contain', 'Enter Last Name');
   })
 
+  it('has a radio group with three shift options when adding a new user', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-radio').should('have.length', 3);
+  })
+
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
