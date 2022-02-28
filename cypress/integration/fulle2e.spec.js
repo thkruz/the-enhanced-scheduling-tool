@@ -75,6 +75,24 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('form').find('rux-radio').should('have.length', 3);
   })
 
+  it('first option is Day', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-radio').eq(0).invoke('attr', 'value').should('contain', 'day');
+  })
+
+  it('second option is Swing', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-radio').eq(1).invoke('attr', 'value').should('contain', 'swing');
+  })
+
+  it('third option is Mid', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('form').find('rux-radio').eq(2).invoke('attr', 'value').should('contain', 'mid');
+  })
+
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
