@@ -67,7 +67,7 @@ const Calendar = () => {
       <br />
       <br />
       {view === 'monthly' ? (
-        <CalendarMonthlyLayout>
+        <CalendarMonthlyLayout id="monthly-calendar">
           {data.map((entry, idx) => (
             <DayPlaceholder
               key={idx}
