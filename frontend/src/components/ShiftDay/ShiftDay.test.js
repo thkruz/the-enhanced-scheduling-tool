@@ -113,7 +113,6 @@ describe('unit tests for ShiftDay component', () => {
         expect(screen.getByText('Day')).toBeInTheDocument();
         expect(screen.getByText('Swing')).toBeInTheDocument();
         expect(screen.getByText('Mid')).toBeInTheDocument();
-        expect(screen.getAllByRole('listitem').length).toBe(3);
     });
 
 });
