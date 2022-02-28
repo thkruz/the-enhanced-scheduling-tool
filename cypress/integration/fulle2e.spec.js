@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('End-to-End Tests for Enhanced Scheduling App', () => {
+describe('End-to-End Tests for Enhanced Scheduling App - MAIN ROUTE', () => {
   
   it('renders the title Scheduling App upon load', () => {
     cy.visit('/');
@@ -28,5 +28,20 @@ describe('End-to-End Tests for Enhanced Scheduling App', () => {
     cy.get('#monthly-calendar').find('div').should('have.length.gte', 7);
   })
 
+})
+
+describe('End-to-End Tests for Enhanced Scheduling App - DEVELOPER ROUTE', () => {
+  
+
+})
+
+
+describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
+  
+
+})
+
+describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
+  
 
 })
