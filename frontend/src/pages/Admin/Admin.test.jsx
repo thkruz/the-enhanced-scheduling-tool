@@ -1,15 +1,13 @@
-import { MemoryRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import Admin from './Admin';
 
 describe('testing the Administration on the /admin route', () => {
-
   const setup = () => {
     render(
-        <BrowserRouter>
-            <Admin />
-        </BrowserRouter>
+      <BrowserRouter>
+        <Admin />
+      </BrowserRouter>
     );
   };
 
@@ -36,5 +34,4 @@ describe('testing the Administration on the /admin route', () => {
     const foundButton = await screen.findByTestId('data-testid-ru');
     expect(foundButton).toBeInTheDocument();
   });
-
 });

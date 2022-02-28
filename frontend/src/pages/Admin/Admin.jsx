@@ -1,37 +1,39 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { SchedulerContext } from '../../SchedulerContext';
 import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
-import {AdminContainer, Padding, VerticalSpacer} from './AdminStyles';
+import { AdminContainer, Padding, VerticalSpacer } from './AdminStyles';
 import Loading from '../../components/Loading/Loading';
 import Calendar from '../Calendar/Calendar';
 import AdminAddNewUser from './AdminAddNewUser/AdminAddNewUser';
 import AdminRemoveUser from './AdminRemoveUser/AdminRemoveUser';
 
 const Admin = () => {
-    const [status, setStatus] = useState('');
+  const [status, setStatus] = useState('');
 
-    const scheduler = useContext(SchedulerContext);
+  const scheduler = useContext(SchedulerContext);
 
-    const handleDataUpload = () => {
-        alert('This button uploads a new schedule');
-    }
 
-    const handleExportData = () => {
-        const jsonFile = new Blob([JSON.stringify(scheduler.roster)], {type: 'application/json'});
-        const elem = document.createElement('a');
-        elem.setAttribute('href',URL.createObjectURL(jsonFile));
-        elem.download = 'roster.json';
-        elem.click();
-        setStatus('');
-    }
+  const handleDataUpload = () => {
+    alert('This button uploads a new schedule');
+    //setStatus('upload');
+  };
 
-    const handleAddNewUser = () => {
-        setStatus('add');
-    }
+  const handleExportData = () => {
+    const jsonFile = new Blob([JSON.stringify(scheduler.roster)], { type: 'application/json' });
+    const elem = document.createElement('a');
+    elem.setAttribute('href', URL.createObjectURL(jsonFile));
+    elem.download = 'roster.json';
+    elem.click();
+    setStatus('');
+  };
 
-    const handleRemoveUser = () => {
-        setStatus('remove');
-    }
+  const handleAddNewUser = () => {
+    setStatus('add');
+  };
+
+  const handleRemoveUser = () => {
+    setStatus('remove');
+  };
 
     return (
         <AdminContainer>
@@ -54,19 +56,12 @@ const Admin = () => {
                     </div>
                 }
 
-                {
-                    status === 'add' && <AdminAddNewUser setStatus={setStatus}/>
-                }
-                {
-                    status === 'remove' && <AdminRemoveUser setStatus={setStatus}/>
-                }
-                <div>
-                   { (scheduler.roster.length === 0) ? <Loading /> : (status === '') ? <Calendar /> : '' } 
-                </div>
-            </VerticalSpacer>
-
-        </AdminContainer>
-    )
-}
+        {status === 'add' && <AdminAddNewUser setStatus={setStatus} />}
+        {status === 'remove' && <AdminRemoveUser setStatus={setStatus} />}
+        <div>{scheduler.roster.length === 0 ? <Loading /> : status === '' ? <Calendar /> : ''}</div>
+      </VerticalSpacer>
+    </AdminContainer>
+  );
+};
 
 export default Admin;
