@@ -11,5 +11,10 @@ describe('End-to-End Tests for Enhanced Scheduling App', () => {
     cy.visit('/');
     cy.get('#rosterList').find('li').should('have.length.gte', 1);
   })
-  
+
+  it('renders a Download button upon loading', () => {
+    cy.visit('/');
+    cy.get('#downloadButton').should('have.text','Download');
+  })
+
 })
