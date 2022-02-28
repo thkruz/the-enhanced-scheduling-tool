@@ -25,7 +25,7 @@ describe('End-to-End Tests for Enhanced Scheduling App', () => {
 
   it('renders at least 7 schedule days on load', () => {
     cy.visit('/');
-    cy.get('.shiftCard').should('have.length.gte', 7);
+    cy.get('#monthly-calendar').find('div').should('have.length.gte', 7);
   })
 
 
