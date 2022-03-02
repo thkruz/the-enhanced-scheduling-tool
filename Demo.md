@@ -11,6 +11,7 @@ DEMO Pacing
   - Main center view as the current calendar schedule with a Download button to save the calendar as a CSV file
   - The PIX region is reserved for beyond MVP where icons and other quick utility features would exist
   - Inspired from Google Calendar and iCal (Ted’s Burger King story about when something is good, then why not)
+  - Note that this was used by combining a costum useFetch hook combined with a context object and useContext
   - Note that the title is Scheduling App
 - Click on John Doe either in the Calendar or the Roster
   - Note that this takes to a user details page (route /user/:id)
@@ -56,11 +57,11 @@ DEMO Pacing
 
 
 Problem Space
--
+- See main readme
 
 
 Approach to solution
--
+- See main readme
 
 
 RETROSPECTIVE 
@@ -74,6 +75,8 @@ Things We did Well
    - Example: Tony for frontend with respect to commercial entity design
    - Example: Collin for unit testing and component breakdown
 - To be clear though, everyone worked everywhere (unit tests, ci, frontend), it was a shared assignment, but we found it to be useful to have some ownership in certain areas
+- By using Platform One's requirements for very strict builds (e.g. using SonarCube/SonarCloud), it slowed us down in the beginning, but it made us more complete and thorough throughout. A lot of up front pain for a lot of gain in the end.
+- We used the Kanban boards to our advantage, but the mileage gained out of them depended on personalities
 
 Struggled With
 - Styling is often the last real thing to be considered, especially since the design philosophy is to design the failing test -> write minimum code to pass the test (which . It’s applied during the process for scaffolding purposes, but while it might not need as much discussion time as the User Stories for Interactions and Data, it definitely could use some User Stories especially
@@ -83,6 +86,11 @@ Lessons learned
 - Mapping out the data hierarchy should be part of the wireframes.
   - We did some of this, but once we started encountering some cousin-level components, we realized we needed to either lift state higher and higher, or create a context object
   - This causing some refactoring through the scope of the project but also greatly improved the performance and application logic
+- Part of this was also probably due to not having a POST and GET from the backend, where the source of truth was held in the backend
+  - On the other hand, this opens us up to Progressive Web Designs
+  - Unit Testing Hooks is a nightmare... super nightmare...
 
 
+Take Home
+We created a MVP in two weeks, with lots of interacting routes, full testing, and full CI/CD with code scanning. We feel solid about this MVP.
 
