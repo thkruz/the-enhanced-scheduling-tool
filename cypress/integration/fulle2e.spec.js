@@ -86,6 +86,21 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('rux-button').eq(2).click();
   })
 
+  it('adds a new user to the roster after filling out and submitting the form', () => {
+    navigate_to_admin();
+    cy.get('rux-button').eq(2).click();
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(0).shadow().find('input').type('Tony');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(1).shadow().find('input').type('Kelly');
+    cy.get('form').find('rux-button').click();
+    cy.get('#rosterList').find('li').contains('Tony Kelly');
+  })
+  
   it('removes one or more users when using the Remove User button', () => {
     navigate_to_admin();
     cy.get('#rosterList').find('li').contains('John Doe');
@@ -97,16 +112,6 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('rux-checkbox').eq(0).shadow().find('input').click();
     cy.get('rux-button').click();
     cy.get('#rosterList').find('li').contains('John Doe').should('not.exist');
-  })
-
-  it('adds a new user to the roster after filling out and submitting the form', () => {
-    navigate_to_admin();
-    cy.get('rux-button').eq(2).click();
-    cy.get('form').find('rux-input').eq(0).invoke('attr','value','Tony');
-    cy.get('form').find('input').eq(0).invoke('attr','value','Tony');
-    cy.get('form').find('rux-input').eq(1).invoke('attr','value','Kelly');
-    cy.get('form').find('input').eq(1).invoke('attr','value','Kelly');
-    cy.get('form').find('rux-button').click();
   })
 
 })
