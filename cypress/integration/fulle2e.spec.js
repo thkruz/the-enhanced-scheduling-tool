@@ -107,6 +107,16 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
   
+  const navigate_to_user_details = () => {
+    cy.visit('/');
+    cy.get('#rosterList').find('li').should('have.length.gte', 1);
+    cy.get('a').eq(3).click();
+  }
+
+  it('renders the title Member Availability upon load', () => {
+    navigate_to_user_details();
+    cy.get('rux-global-status-bar').shadow().find('h1').should('have.text','TESTMEMBER AVAILABILITY');
+  })
   
 
 })
