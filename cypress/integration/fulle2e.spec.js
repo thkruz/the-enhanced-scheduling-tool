@@ -84,19 +84,66 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
   it('third option is Mid', () => {
     navigate_to_admin();
     cy.get('rux-button').eq(2).click();
-    cy.get('form').find('rux-radio').eq(2).invoke('attr', 'value').should('contain', 'mid');
   })
 
   it('adds a new user to the roster after filling out and submitting the form', () => {
     navigate_to_admin();
     cy.get('rux-button').eq(2).click();
-    cy.get('form').find('rux-input').eq(0).invoke('attr','value','Tony');
-    cy.get('form').find('input').eq(0).invoke('attr','value','Tony');
-    cy.get('form').find('rux-input').eq(1).invoke('attr','value','Kelly');
-    cy.get('form').find('input').eq(1).invoke('attr','value','Kelly');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(0).shadow().find('input').type('Tony');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(1).shadow().find('input').type('Kelly');
     cy.get('form').find('rux-button').click();
+    cy.get('#rosterList').find('li').contains('Tony Kelly');
   })
 
+  it('shows an alert if the first name field is empty on add user', () => {
+    navigate_to_admin();
+    const stub = cy.stub()  
+    cy.on('window:alert', stub)
+    cy.get('rux-button').eq(2).click();
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(0).shadow().find('input').type('Tony');
+    cy.get('form').find('rux-button').click();
+    cy.then(() => {
+      expect(stub.getCall(0)).to.be.calledWith('First and Last Name Required!')      
+    });
+  })
+
+  it('shows an alert if the last name field is empty on add user', () => {
+    navigate_to_admin();
+    const stub = cy.stub()  
+    cy.on('window:alert', stub)
+    cy.get('rux-button').eq(2).click();
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(1).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(1).shadow().find('input').type('Kelly');
+    cy.get('form').find('rux-button').click();
+    cy.then(() => {
+      expect(stub.getCall(0)).to.be.calledWith('First and Last Name Required!')      
+    });
+  })
+
+  it('removes one or more users when using the Remove User button', () => {
+    navigate_to_admin();
+    cy.get('#rosterList').find('li').contains('John Doe');
+    cy.get('rux-button').eq(3).click();
+    cy.get('rux-checkbox').should('have.length.gte', 1);
+    cy.get('rux-checkbox').eq(0).shadow().find('input').invoke('width','20px');
+    cy.get('rux-checkbox').eq(0).shadow().find('input').invoke('height','20px');
+    cy.get('rux-checkbox').eq(0).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-checkbox').eq(0).shadow().find('input').click();
+    cy.get('rux-button').click();
+    cy.get('#rosterList').find('li').contains('John Doe').should('not.exist');
+  })
+    
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
