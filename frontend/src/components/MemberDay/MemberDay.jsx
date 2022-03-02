@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { dayKey2Date } from '../../utils/dayKey.mjs';
 import Chip from '@mui/material/Chip';
 
@@ -9,20 +9,18 @@ const formatChipLabel = shift => {
 };
 
 const MemberDay = ({ member, dayKey, entry }) => {
-  const [day_background, set_day_background] = useState('');
   const [availability_status, set_availability_status] = useState('');
 
-  const set_availability = (member_object, date_val, date) => {
-    const date_index = member_object.nonavail.indexOf(date_val);
+  const set_availability = (member_object, dayKey) => {
+    // dayKey is in ms since jan 1 2022
+    const date_index = member_object.nonavail.indexOf(dayKey);
     if (date_index !== -1) {
       // found date in list, set availability to free and remove from list
-      member_object.nonavail = member_object.nonavail.filter(el => el !== date_val);
-      set_day_background('');
+      member_object.nonavail = member_object.nonavail.filter(el => el !== dayKey);
       set_availability_status('Available');
     } else {
       // did not find date in list, set availability to unavailable
-      member_object.nonavail.push(date);
-      set_day_background('red');
+      member_object.nonavail.push(dayKey);
       set_availability_status('Unavailable');
     }
   };
@@ -31,12 +29,8 @@ const MemberDay = ({ member, dayKey, entry }) => {
   // member Member object
   // date as Date object
   return (
-    <div
-      style={{ backgroundColor: day_background }}
-      onClick={() => set_availability(member, dayKey2Date(dayKey))}
-      data-testid="member-day-container"
-    >
-      <p style={{ textAlign: 'center' }}>{dayKey2Date(dayKey).toDateString()}</p>
+    <div onClick={() => set_availability(member, dayKey2Date(dayKey).getTime())} data-testid="member-day-container">
+      <p style={{ textAlign: 'center' }}>{dayKey2Date(dayKey).getDate()}</p>
       {entry?.shift1?.members?.filter(u => u.id === member.id).length > 0 ? (
         <p style={{ textAlign: 'center' }}>
           <Chip label={formatChipLabel(entry.shift1.shift)} color="primary" />
