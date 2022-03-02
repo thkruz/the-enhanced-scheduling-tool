@@ -49,7 +49,7 @@ const UserDetails = () => {
 
   return (
     <AdminContainer>
-      <p>{user.first}</p>
+      <p id="userDetailsFirstName">{user.first}</p>
       <p>{user.last}</p>
       <RuxSelect
         label="Shift Preference"
