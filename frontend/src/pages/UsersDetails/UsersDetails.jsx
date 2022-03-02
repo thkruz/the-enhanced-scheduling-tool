@@ -4,17 +4,10 @@ import { RuxOption, RuxSelect } from '../../../node_modules/@astrouxds/react/dis
 import Loading from '../../components/Loading/Loading';
 import { CalendarMonthlyLayout } from '../../components/StyledComponents/CalendarMonthlyLayout';
 import { SchedulerContext } from '../../SchedulerContext';
-import { dayKey2Date } from '../../utils/dayKey.mjs';
 import { AdminContainer } from '../Admin/AdminStyles';
 import { CalendarDayCard } from './../../components/StyledComponents/CalendaryDayCard';
 import { ShiftContainer } from './../../components/StyledComponents/ShiftContainer';
-import Chip from '@mui/material/Chip';
-
-const formatChipLabel = shift => {
-  // Uppercase first letter
-  shift = shift.charAt(0).toUpperCase() + shift.slice(1);
-  return `${shift} Shift`;
-};
+import MemberDay from '../../components/MemberDay/MemberDay';
 
 const UserDetails = () => {
   const [user, setUser] = useState({});
@@ -60,37 +53,7 @@ const UserDetails = () => {
           scheduler.calendar.map((entry, idx) => (
             <CalendarDayCard key={idx}>
               <ShiftContainer>
-                <p style={{ textAlign: 'center' }}>{dayKey2Date(entry.dayKey).toDateString()}</p>
-                {entry.shift1?.members?.filter(u => u.id === user.id).length > 0 ? (
-                  <p style={{ textAlign: 'center' }}>
-                    <Chip label={formatChipLabel(entry.shift1.shift)} color="primary" />
-                  </p>
-                ) : null}
-                {entry.shift2?.members?.filter(u => u.id === user.id).length > 0 ? (
-                  <p style={{ textAlign: 'center' }}>
-                    <Chip label={formatChipLabel(entry.shift2.shift)} color="primary" />
-                  </p>
-                ) : null}
-                {entry.shift3?.members?.filter(u => u.id === user.id).length > 0 ? (
-                  <p style={{ textAlign: 'center' }}>
-                    <Chip label={formatChipLabel(entry.shift3.shift)} color="primary" />
-                  </p>
-                ) : null}
-                {entry.shift4?.members?.filter(u => u.id === user.id).length > 0 ? (
-                  <p style={{ textAlign: 'center' }}>
-                    <Chip label={formatChipLabel(entry.shift4.shift)} color="primary" />
-                  </p>
-                ) : null}
-                {entry.shift5?.members?.filter(u => u.id === user.id).length > 0 ? (
-                  <p style={{ textAlign: 'center' }}>
-                    <Chip label={formatChipLabel(entry.shift5.shift)} color="primary" />
-                  </p>
-                ) : null}
-                {user.nonavail?.includes(dayKey2Date(entry.dayKey).getTime()) ? (
-                  <p style={{ textAlign: 'center' }}>
-                    <Chip label="Unavailable" color="error" />
-                  </p>
-                ) : null}
+                <MemberDay member={user} entry={entry} dayKey={entry.dayKey} />
               </ShiftContainer>
             </CalendarDayCard>
           ))
