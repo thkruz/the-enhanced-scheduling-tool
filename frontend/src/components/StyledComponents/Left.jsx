@@ -5,5 +5,6 @@ export const Left = styled.section`
   flex-direction: column;
   background: var(--color-global-tertiary-700);
   padding: 0.7rem;
-  width: 200px;
+  width: 240px;
+  overflow-y: auto;
 `;

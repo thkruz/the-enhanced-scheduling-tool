@@ -1,14 +1,15 @@
 //@ts-check
 
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Routes, Route, useLocation, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
-import Loading from './components/Loading/Loading';
 import Calendar from './pages/Calendar/Calendar';
 import UserDetails from './pages/UsersDetails/UsersDetails';
 import About from './pages/About/About';
+import Admin from './pages/Admin/Admin';
 import useFetch from './utils/useFetch/useFetch';
+import { SchedulerContext } from './SchedulerContext';
 import { RuxClassificationMarking } from '@astrouxds/react';
 import { Container } from './components/StyledComponents/Container';
 import { Navigation } from './components/StyledComponents/Navigation';
@@ -18,16 +19,27 @@ import { Center } from './components/StyledComponents/Center';
 import { Right } from './components/StyledComponents/Right';
 
 const App = () => {
-  const { data, err, load } = useFetch('roster');
+  const { data: rosterData } = useFetch('roster');
+  // TODO: Replace with a real fetch request
+  const { data: calendarData } = useFetch('calendar?start=1&end=31');
+  const scheduler = useContext(SchedulerContext);
 
   useEffect(() => {
-    console.log(data);
-    console.log(err);
-    console.log(load);
-  }, [data, err, load]);
+    scheduler.roster = rosterData;
+    scheduler.counter = rosterData.length;
+  }, [rosterData, scheduler]);
+
+  useEffect(() => {
+    scheduler.calendar = calendarData;
+  }, [calendarData, scheduler]);
+
+  // const handleAddNewMember = () => {
+  //   alert('This button adds a new user to the roster');
+  // };
 
   return (
     <Container>
+
       <Navigation>
         <RuxClassificationMarking classification="unclassified" />
         <Header location={useLocation().pathname} />
@@ -35,7 +47,7 @@ const App = () => {
       <Main>
         <Left>
           <span>Quick Navigation</span>
-          <ul>
+          <ul id="quickNavigationList">
             <li>
               <NavLink to="/">Schedule</NavLink>
             </li>
@@ -47,14 +59,16 @@ const App = () => {
             </li>
           </ul>
           <span>Roster</span>
-          <ul>
-            {data &&
-              data.map(member => (
-                <li key={member.id}>
-                  <Link to={`/user/${member.id}`}>{member.first} {member.last}</Link>
+          <ul id="rosterList">
+            {scheduler.roster.length > 0 &&
+              scheduler.roster.map(member => (
+                <li key={`${member.first}+${member.last}+${member.id}`}>
+                  <Link to={`/user/${member.id}`}>
+                    {member.first} {member.last}
+                  </Link>
                 </li>
               ))}
-            {useLocation().pathname === '/admin' && <li>+ Add New Member</li> }
+            {/* {useLocation().pathname === '/admin' && <RuxButton onClick={handleAddNewMember}><span style={{fontSize: "0.9rem"}}>{'+ Add New Member'}</span></RuxButton>} */}
           </ul>
         </Left>
         <Center>
@@ -62,7 +76,7 @@ const App = () => {
             <Route path="/" element={<Calendar day_array={[]} />} />
             <Route path="/user/:id" element={<UserDetails />} />
             <Route path="/about" element={<About />} />
-            <Route path="/admin" element={<Loading />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </Center>
         <Right>PIX</Right>

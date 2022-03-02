@@ -8,15 +8,16 @@ import Calendar from '../Calendar/Calendar';
 const UserDetails = () => {
   const [user, setUser] = useState({});
 
-  const params = useParams();
-  const { data, err, load } = useFetch(`user/${params.id}`);
+  const scheduler = useContext(SchedulerContext);
 
   useEffect(() => {
     setUser(data);
   }, [data, err, load]);
 
   const handlePrefChange = e => {
-    setUser({ ...user, preference: e.target.value });
+    const arr = scheduler.roster;
+    const member = arr.filter(item => item.id === Number(params.id))[0];
+    member.preference = e.target.value;
   };
 
   if (load) return <Loading />;
@@ -57,7 +58,7 @@ const UserDetails = () => {
   };
 
   return (
-    <div>
+    <AdminContainer>
       <p>{user.first}</p>
       <p>{user.last}</p>
       <RuxSelect

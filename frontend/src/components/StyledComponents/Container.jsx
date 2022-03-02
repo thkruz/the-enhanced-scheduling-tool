@@ -5,5 +5,5 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: var(--color-global-tertiary-900);
-  height: 100vh;
+  flex-grow: 1;
 `;

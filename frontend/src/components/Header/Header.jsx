@@ -18,6 +18,7 @@ const getPageTitle = location => {
 const Header = ({ location }) => {
   return (
     <RuxGlobalStatusBar
+      id="page-title"
       style={{ backgroundColor: 'var(--color-global-tertiary-800)' }}
       dataTestid="heading"
       include-icon="true"

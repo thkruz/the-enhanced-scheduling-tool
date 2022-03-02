@@ -1,6 +1,13 @@
-import React, {useEffect} from "react";
-import Loading from "../../components/Loading/Loading";
-import {Link} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import Loading from '../../components/Loading/Loading';
+import { Link, useLocation } from 'react-router-dom';
+import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
+import { CalendarMonthlyLayout } from '../../components/StyledComponents/CalendarMonthlyLayout';
+import { CalendarDayCard } from '../../components/StyledComponents/CalendaryDayCard';
+import { ShiftContainer } from '../../components/StyledComponents/ShiftContainer';
+import { Shift } from '../../components/StyledComponents/Shift';
+import useFetch from '../../utils/useFetch/useFetch';
+import { saveCsv } from '../../utils/saveCsv';
 
 import { CalendarMonthlyLayout } from "../../components/StyledComponents/CalendarMonthlyLayout";
 import { CalendarDayCard } from "../../components/StyledComponents/CalendaryDayCard";
@@ -18,27 +25,45 @@ const DayPlaceholder = ({day,shift1,shift2,shift3}) => {
     <CalendarDayCard>
       <ShiftContainer>
         {day}
-        {shift1.map( (member,idx) => <Shift key={idx}><Link to={`/user/${member.id}`}>{member.first} {member.last}</Link></Shift>)}
+        {shift1.map((member, idx) => (
+          <Shift key={idx}>
+            <Link to={`/user/${member.id}`}>
+              {member.first} {member.last}
+            </Link>
+          </Shift>
+        ))}
         <hr />
-        {shift2.map( (member,idx) => <Shift key={idx}><Link to={`/user/${member.id}`}>{member.first} {member.last}</Link></Shift>)}
+        {shift2.map((member, idx) => (
+          <Shift key={idx}>
+            <Link to={`/user/${member.id}`}>
+              {member.first} {member.last}
+            </Link>
+          </Shift>
+        ))}
         <hr />
-        {shift3.map( (member,idx) => <Shift key={idx}><Link to={`/user/${member.id}`}>{member.first} {member.last}</Link></Shift>)}
+        {shift3.map((member, idx) => (
+          <Shift key={idx}>
+            <Link to={`/user/${member.id}`}>
+              {member.first} {member.last}
+            </Link>
+          </Shift>
+        ))}
       </ShiftContainer>
     </CalendarDayCard>
-  )
-}
+  );
+};
 
 const Calendar = ({ day_array }) => {
   //const [view, setView] = useState('monthly');
   const view = "monthly";
   const { data, err, load } = useFetch('calendar?start=1&end=31');
+  const location = useLocation().pathname;
 
   useEffect(() => {
-    //console.log(data);
-    //console.log(err);
+    // Intentionally left blank
   }, [data, err, load]);
 
-  if (data.length <= 0) return <Loading />
+  if (data.length <= 0) return <Loading />;
 
   return (
     <article style={{width: "100%"}}>
@@ -68,7 +93,7 @@ const Calendar = ({ day_array }) => {
             <p>View does not yet exist.</p>
           }
     </article>
-  )
-}
+  );
+};
 
 export default Calendar;
