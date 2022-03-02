@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { RuxOption, RuxSelect } from '../../../node_modules/@astrouxds/react/dist/components';
 import Loading from '../../components/Loading/Loading';
 import { CalendarMonthlyLayout } from '../../components/StyledComponents/CalendarMonthlyLayout';
-//import useFetch from '../../utils/useFetch/useFetch';
 import { SchedulerContext } from '../../SchedulerContext';
 import { dayKey2Date } from '../../utils/dayKey.mjs';
 import { AdminContainer } from '../Admin/AdminStyles';
@@ -21,14 +20,7 @@ const UserDetails = () => {
   const [user, setUser] = useState({});
 
   const scheduler = useContext(SchedulerContext);
-
   const params = useParams();
-  //const { data, err, load } = useFetch(`user/${params.id}`);
-  // useEffect( () => {
-  //   setUser(data);
-  // }, [data, err, load]);
-
-  console.log(params);
 
   const handlePrefChange = e => {
     const arr = scheduler.roster;
@@ -38,7 +30,6 @@ const UserDetails = () => {
 
   useEffect(() => {
     if (scheduler && scheduler.roster.length > 0) {
-      console.log(scheduler.calendar);
       const arr = scheduler.roster;
       const member = arr.filter(item => item.id === Number(params.id))[0];
       setUser(member);
