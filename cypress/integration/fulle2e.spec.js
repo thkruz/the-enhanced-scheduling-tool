@@ -138,4 +138,8 @@ describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g
     cy.get("rux-select").shadow().find('option').eq(0).contains('Day');
   })
 
+  it('renders a preference selection option 1 should be swing', () => {
+    navigate_to_user_details();
+    cy.get("rux-select").shadow().find('option').eq(1).contains('Swing');
+  })
 })
