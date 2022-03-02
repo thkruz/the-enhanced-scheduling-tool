@@ -117,6 +117,12 @@ describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g
     navigate_to_user_details();
     cy.get('rux-global-status-bar').shadow().find('h1').should('have.text','TESTMEMBER AVAILABILITY');
   })
+
+  it('renders the first name of a user upon load', () => {
+    navigate_to_user_details();
+    cy.get("userDetailsFirstName").contains("John");
+  })
+  
   
 
 })
