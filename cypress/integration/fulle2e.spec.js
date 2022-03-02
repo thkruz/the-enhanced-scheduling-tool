@@ -28,9 +28,6 @@ describe('End-to-End Tests for Enhanced Scheduling App - MAIN ROUTE', () => {
 
 })
 
-})
-
-
 describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
 
   const navigate_to_admin = () => {
