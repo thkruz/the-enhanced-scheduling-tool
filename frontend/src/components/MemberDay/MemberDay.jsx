@@ -36,34 +36,34 @@ const MemberDay = ({ member, dayKey, entry }) => {
       <ShiftContainer>
         <p style={{ textAlign: 'center' }}>{dayKey2Date(dayKey).getDate()}</p>
         {entry?.shift1?.members?.filter(u => u.id === member.id).length > 0 ? (
-          <p style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             <Chip label={formatChipLabel(entry.shift1.shift)} color="primary" />
-          </p>
+          </div>
         ) : null}
         {entry?.shift2?.members?.filter(u => u.id === member.id).length > 0 ? (
-          <p style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             <Chip label={formatChipLabel(entry.shift2.shift)} color="primary" />
-          </p>
+          </div>
         ) : null}
         {entry?.shift3?.members?.filter(u => u.id === member.id).length > 0 ? (
-          <p style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             <Chip label={formatChipLabel(entry.shift3.shift)} color="primary" />
-          </p>
+          </div>
         ) : null}
         {entry?.shift4?.members?.filter(u => u.id === member.id).length > 0 ? (
-          <p style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             <Chip label={formatChipLabel(entry.shift4.shift)} color="primary" />
-          </p>
+          </div>
         ) : null}
         {entry?.shift5?.members?.filter(u => u.id === member.id).length > 0 ? (
-          <p style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             <Chip label={formatChipLabel(entry.shift5.shift)} color="primary" />
-          </p>
+          </div>
         ) : null}
         {member?.nonavail?.includes(dayKey2Date(entry?.dayKey).getTime()) ? (
-          <p style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             <Chip label="Unavailable" color="error" />
-          </p>
+          </div>
         ) : null}
       </ShiftContainer>
     </CalendarDayCard>
