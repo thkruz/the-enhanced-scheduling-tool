@@ -95,7 +95,7 @@ const UserDetails = () => {
                     <Chip label={formatChipLabel(entry.shift5.shift)} color="primary" />
                   </p>
                 ) : null}
-                {user.nonavail.includes(dayKey2Date(entry.dayKey).getTime()) ? (
+                {user.nonavail?.includes(dayKey2Date(entry.dayKey).getTime()) ? (
                   <p style={{ textAlign: 'center' }}>
                     <Chip label="Unavailable" color="error" />
                   </p>
