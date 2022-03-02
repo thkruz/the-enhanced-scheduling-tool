@@ -5,8 +5,6 @@ import Loading from '../../components/Loading/Loading';
 import { CalendarMonthlyLayout } from '../../components/StyledComponents/CalendarMonthlyLayout';
 import { SchedulerContext } from '../../SchedulerContext';
 import { AdminContainer } from '../Admin/AdminStyles';
-import { CalendarDayCard } from './../../components/StyledComponents/CalendaryDayCard';
-import { ShiftContainer } from './../../components/StyledComponents/ShiftContainer';
 import MemberDay from '../../components/MemberDay/MemberDay';
 
 const UserDetails = () => {
@@ -51,11 +49,7 @@ const UserDetails = () => {
       <CalendarMonthlyLayout style={{ width: '100%', margin: '20px 0 0 0' }}>
         {scheduler?.calendar?.length > 0 ? (
           scheduler.calendar.map((entry, idx) => (
-            <CalendarDayCard key={idx}>
-              <ShiftContainer>
-                <MemberDay member={user} entry={entry} dayKey={entry.dayKey} />
-              </ShiftContainer>
-            </CalendarDayCard>
+            <MemberDay key={idx} member={user} entry={entry} dayKey={entry.dayKey} />
           ))
         ) : (
           <p>No calendar data</p>
