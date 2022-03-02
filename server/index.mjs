@@ -1,9 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import { sendFile } from './sendFile.mjs';
+import { sendFile } from './lib/sendFile.mjs';
 import fs from 'fs';
+import { terminate } from './lib/terminate.mjs';
+import { SERVER_PORT, ERRORS } from './constants.mjs';
+import '../types.mjs';
+
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || SERVER_PORT;
 
 /**
  * Middleware
@@ -33,52 +37,110 @@ app.listen(port, () => {
 /**
  * Default Route - Return Hello World
  */
-app.get('/', cors(), (req, res) => {
+app.get('/', /** @type {any} */ (cors()), (req, res) => {
   res.send('Hello World!');
 });
 
 /**
  * Schedule Route - Return Schedule
  */
-app.use('/calendar', cors(), async (req, res) => {
+app.use('/calendar', /** @type {any} */ (cors()), async (req, res) => {
   const { start, end } = req.query;
   // Ensure we have a start and end date
   if (!start) {
-    res.status(400).send(`Post request needs to include 'start' parameter`);
+    res
+      .status(ERRORS.INVALID_INPUT)
+      .send(`Post request needs to include 'start' parameter`);
     return;
   }
   if (!end) {
-    res.status(400).send(`Post request needs to include 'end' parameter`);
+    res
+      .status(ERRORS.INVALID_INPUT)
+      .send(`Post request needs to include 'end' parameter`);
     return;
   }
 
   // serve schedule from file
-  sendFile('./schedule.json', res);
+  sendFile('./calendar.json', res);
 });
+
+app.get(
+  '/test/start/:start/end/:end',
+  /** @type {any} */ (cors()),
+  async (req, res) => {
+    const { start, end } = req.params;
+    // Ensure we have a start and end date
+    if (!start) {
+      res
+        .status(ERRORS.INVALID_INPUT)
+        .send(`Post request needs to include 'start' parameter`);
+      return;
+    }
+    if (!end) {
+      res
+
+        .status(ERRORS.INVALID_INPUT)
+        .send(`Post request needs to include 'end' parameter`);
+      return;
+    }
+
+    fs.readFile('./calendar.json', (err, data) => {
+      if (err) {
+        res.status(ERRORS.FILE_NOT_FOUND).send('File not found');
+        return;
+      }
+
+      const schedule = JSON.parse(data.toString());
+      const filteredSchedule = schedule.filter(
+        (/** @type {CalendarDay} */ calendarDay) =>
+          calendarDay.dayKey >= parseInt(start, 10) &&
+          calendarDay.dayKey <= parseInt(end, 10) &&
+          calendarDay.dayKey <= parseInt(end, 10),
+      );
+      res.send(filteredSchedule);
+    });
+  },
+);
 
 /**
  * Roster Route - Return all members
  */
-app.use('/roster', cors(), async (req, res) => {
+app.use('/roster', /** @type {any} */ (cors()), async (req, res) => {
   sendFile('./roster.json', res);
 });
 
 /**
  * User Route - Return a member
  */
-app.get('/user/:userid', cors(), (req, res) => {
+app.get('/user/:userid', /** @type {any} */ (cors()), (req, res) => {
   const { userid } = req.params;
   fs.readFile('./roster.json', (err, data) => {
     if (err) {
-      res.status(500).send(err);
+      res.status(ERRORS.INTERNAL_ERROR).send(err);
       return;
     }
-    const roster = JSON.parse(data);
-    const user = roster.find((member) => member.id === parseInt(userid));
+    const roster = JSON.parse(data.toString());
+
+    const user = roster.find(
+      (/** @type {Member} */ member) => member.id === parseInt(userid, 10),
+    );
     if (!user) {
-      res.status(404).send(`User ${userid} not found`);
+      res.status(ERRORS.NOT_FOUND).send(`User ${userid} not found`);
     } else {
       res.send(user);
     }
   });
 });
+
+/**
+ * Gracefully handle termination
+ */
+const exitHandler = terminate(app, {
+  coredump: false,
+  timeout: 500,
+});
+
+process.on('uncaughtException', exitHandler(1, 'Unexpected Error'));
+process.on('unhandledRejection', exitHandler(1, 'Unhandled Promise'));
+process.on('SIGTERM', exitHandler(0, 'SIGTERM'));
+process.on('SIGINT', exitHandler(0, 'SIGINT'));

@@ -1,4 +1,2916 @@
-{
-  "start-day:": "1",
-  "end-day:": "30"
-}
+[
+  {
+    "dayKey": 1,
+    "shift1": {
+      "dayKey": 1,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 1,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 1,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 2,
+    "shift1": {
+      "dayKey": 2,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 2,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 2,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 3,
+    "shift1": {
+      "dayKey": 3,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 3,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 3,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 4,
+    "shift1": {
+      "dayKey": 4,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 4,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 4,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 5,
+    "shift1": {
+      "dayKey": 5,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 5,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 5,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 6,
+    "shift1": {
+      "dayKey": 6,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 6,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 6,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 7,
+    "shift1": {
+      "dayKey": 7,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 7,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 7,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 8,
+    "shift1": {
+      "dayKey": 8,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 8,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 8,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 9,
+    "shift1": {
+      "dayKey": 9,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 9,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 9,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 10,
+    "shift1": {
+      "dayKey": 10,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 10,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 10,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 11,
+    "shift1": {
+      "dayKey": 11,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 11,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 11,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 12,
+    "shift1": {
+      "dayKey": 12,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 12,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 12,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 13,
+    "shift1": {
+      "dayKey": 13,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 13,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 13,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 14,
+    "shift1": {
+      "dayKey": 14,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 14,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 14,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 15,
+    "shift1": {
+      "dayKey": 15,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 15,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 15,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 16,
+    "shift1": {
+      "dayKey": 16,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 16,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 16,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 17,
+    "shift1": {
+      "dayKey": 17,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 17,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 17,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 18,
+    "shift1": {
+      "dayKey": 18,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 18,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 18,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 19,
+    "shift1": {
+      "dayKey": 19,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 19,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 19,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 20,
+    "shift1": {
+      "dayKey": 20,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 20,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 20,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 21,
+    "shift1": {
+      "dayKey": 21,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 21,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 21,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 22,
+    "shift1": {
+      "dayKey": 22,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 22,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 22,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 23,
+    "shift1": {
+      "dayKey": 23,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 23,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 23,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 24,
+    "shift1": {
+      "dayKey": 24,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 24,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 24,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 25,
+    "shift1": {
+      "dayKey": 25,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 25,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 25,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 26,
+    "shift1": {
+      "dayKey": 26,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 26,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 26,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 27,
+    "shift1": {
+      "dayKey": 27,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 27,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 27,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 28,
+    "shift1": {
+      "dayKey": 28,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 28,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 28,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 29,
+    "shift1": {
+      "dayKey": 29,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 29,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 29,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 30,
+    "shift1": {
+      "dayKey": 30,
+      "shift": "day",
+      "members": [
+        {
+          "id": 7,
+          "first": "Jim",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1640995200000,
+            1643068800000,
+            1643155200000,
+            1642204800000
+          ]
+        },
+        {
+          "id": 10,
+          "first": "Juan",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1641859200000,
+            1643328000000,
+            1641168000000,
+            1642291200000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 30,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 8,
+          "first": "Janet",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642636800000,
+            1643328000000,
+            1642464000000,
+            1642550400000
+          ]
+        },
+        {
+          "id": 11,
+          "first": "Joey",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1643241600000,
+            1643328000000,
+            1642032000000,
+            1642377600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 30,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 9,
+          "first": "Jackie",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1641513600000,
+            1642550400000,
+            1642982400000,
+            1643155200000
+          ]
+        },
+        {
+          "id": 12,
+          "first": "Julia",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642723200000,
+            1641513600000,
+            1643587200000,
+            1641600000000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  },
+  {
+    "dayKey": 31,
+    "shift1": {
+      "dayKey": 31,
+      "shift": "day",
+      "members": [
+        {
+          "id": 1,
+          "first": "John",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643068800000,
+            1641600000000,
+            1643068800000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 4,
+          "first": "Jill",
+          "last": "Doe",
+          "preference": "day",
+          "nonavail": [
+            1643155200000,
+            1641081600000,
+            1642118400000,
+            1642982400000
+          ]
+        }
+      ]
+    },
+    "shift2": {
+      "dayKey": 31,
+      "shift": "swing",
+      "members": [
+        {
+          "id": 2,
+          "first": "Jane",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642291200000,
+            1642464000000,
+            1641254400000,
+            1642636800000
+          ]
+        },
+        {
+          "id": 5,
+          "first": "Joe",
+          "last": "Doe",
+          "preference": "swing",
+          "nonavail": [
+            1642809600000,
+            1642636800000,
+            1641686400000,
+            1642809600000
+          ]
+        }
+      ]
+    },
+    "shift3": {
+      "dayKey": 31,
+      "shift": "mid",
+      "members": [
+        {
+          "id": 3,
+          "first": "Jack",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642032000000,
+            1643587200000,
+            1641945600000,
+            1642982400000
+          ]
+        },
+        {
+          "id": 6,
+          "first": "Jenny",
+          "last": "Doe",
+          "preference": "mid",
+          "nonavail": [
+            1642291200000,
+            1643587200000,
+            1642464000000,
+            1643500800000
+          ]
+        }
+      ]
+    },
+    "isConflict": true
+  }
+]

@@ -1,12 +1,14 @@
 import React from 'react';
+import { RuxGlobalStatusBar } from '@astrouxds/react';
 
 const getPageTitle = location => {
-  switch (location) {
-    case '/about':
+
+  switch (true) {
+    case /\/about/.test(location):
       return 'Developer Info';
-    case '/user':
+    case /\/user*/.test(location):
       return 'Member Availability';
-    case '/admin':
+    case /\/admin/.test(location):
       return 'Admin Page';
     default:
       return 'Scheduling App';
@@ -15,9 +17,16 @@ const getPageTitle = location => {
 
 const Header = ({ location }) => {
   return (
-    <div>
-      <h1 style={{ textAlign: 'center' }}>{getPageTitle(location)}</h1>
-    </div>
+    <RuxGlobalStatusBar
+      id="page-title"
+      style={{ backgroundColor: 'var(--color-global-tertiary-800)' }}
+      dataTestid="heading"
+      include-icon="true"
+      app-domain="TEST"
+      app-name={getPageTitle(location)}
+      app-version="1.0.0"
+      menu-icon="apps"
+    ></RuxGlobalStatusBar>
   );
 };
 

@@ -4,7 +4,9 @@
   "description": "The Enhanced Scheduling Tool (TEST)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx start-server-and-test start:server 3001 test:frontend",
+    "start:frontend": "cd frontend && npm run start",
+    "start:server": "cd server && node index.mjs",
     "build:frontend": "cd frontend && npm run build",
     "test:frontend": "cd frontend && npm run test:unit"
   },
@@ -12,13 +14,37 @@
     "type": "git",
     "url": "git+https://github.com/tkbdsi/sdi-blended-project2-scaffold.git"
   },
+  "eslintConfig": {
+    "extends": [
+      "plugin:cypress/recommended"
+    ]
+  },
+  "prettier": {
+    "transform": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "trailingComma": "es5",
+    "semi": true,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tkbdsi/sdi-blended-project2-scaffold/issues"
   },
   "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme",
-  "dependencies": {
-    "eslint": "^8.9.0"
+  "devDependencies": {
+    "@cypress/react": "^5.12.3",
+    "@cypress/webpack-dev-server": "^1.8.1",
+    "@cypress/webpack-preprocessor": "^5.11.1",
+    "@testing-library/cypress": "^8.0.2",
+    "cypress": "^9.5.0",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
+    "start-server-and-test": "^1.14.0"
   }
 }
