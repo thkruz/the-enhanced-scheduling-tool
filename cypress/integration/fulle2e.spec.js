@@ -130,7 +130,12 @@ describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g
   
   it('renders a preference select of a user upon load', () => {
     navigate_to_user_details();
-    cy.get("RuxSelect").shadow().find('option').should('have.length', 3);
+    cy.get("rux-select").shadow().find('option').should('have.length', 3);
+  })
+
+  it('renders a preference selection option 1 should be day', () => {
+    navigate_to_user_details();
+    cy.get("rux-select").shadow().find('option').eq(0).contains('Day');
   })
 
 })
