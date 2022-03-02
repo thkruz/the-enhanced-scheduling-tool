@@ -123,6 +123,10 @@ describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g
     cy.get("userDetailsFirstName").contains("John");
   })
   
+  it('renders the first name of a user upon load', () => {
+    navigate_to_user_details();
+    cy.get("userDetailsLastName").contains("Doe");
+  })
   
 
 })
