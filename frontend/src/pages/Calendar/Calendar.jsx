@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import Loading from '../../components/Loading/Loading';
 import { Link, useLocation } from 'react-router-dom';
 import { RuxButton } from '../../../node_modules/@astrouxds/react/dist/components';
@@ -8,6 +8,7 @@ import { ShiftContainer } from '../../components/StyledComponents/ShiftContainer
 import { Shift } from '../../components/StyledComponents/Shift';
 import useFetch from '../../utils/useFetch/useFetch';
 import { saveCsv } from '../../utils/saveCsv';
+import { SchedulerContext } from '../../SchedulerContext';
 
 const DayPlaceholder = ({ day, shift1, shift2, shift3 }) => {
   return (
@@ -43,15 +44,17 @@ const DayPlaceholder = ({ day, shift1, shift2, shift3 }) => {
 };
 
 const Calendar = () => {
+  const [data, setData] = useState([]);
+
   const view = 'monthly';
-  const { data, err, load } = useFetch('calendar?start=1&end=31');
+  const scheduler = useContext(SchedulerContext);
   const location = useLocation().pathname;
 
   useEffect(() => {
-    // Intentionally left blank
-  }, [data, err, load]);
+    setData(scheduler.calendar);
+  });
 
-  if (data.length <= 0) return <Loading />;
+  if (scheduler?.calendar.length <= 0) return <Loading />;
 
   return (
     <article style={{ width: '100%' }}>
