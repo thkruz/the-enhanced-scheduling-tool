@@ -62,6 +62,9 @@ Problem Space
 Approach to solution
 -
 
+
+RETROSPECTIVE 
+
 Things We did Well
 - Communication using GitHub discussions and commenting on issues
 - Creating bite-sized Issues that anyone could grab and handle isolation having no to very few overlapping conflicts
@@ -72,18 +75,14 @@ Things We did Well
    - Example: Collin for unit testing and component breakdown
 - To be clear though, everyone worked everywhere (unit tests, ci, frontend), it was a shared assignment, but we found it to be useful to have some ownership in certain areas
 
+Struggled With
+- Styling is often the last real thing to be considered, especially since the design philosophy is to design the failing test -> write minimum code to pass the test (which . It’s applied during the process for scaffolding purposes, but while it might not need as much discussion time as the User Stories for Interactions and Data, it definitely could use some User Stories especially
+Note: our styling overall, we feel is solid. We could have organized the styled-components integrating with the Rux UI as a separate User Story all on its own
+
 Lessons learned
 - Mapping out the data hierarchy should be part of the wireframes.
   - We did some of this, but once we started encountering some cousin-level components, we realized we needed to either lift state higher and higher, or create a context object
   - This causing some refactoring through the scope of the project but also greatly improved the performance and application logic
 
 
-Struggled With
-- Styling is often the last real thing to be considered, especially since the design philosophy is to design the failing test -> write minimum code to pass the test (which . It’s applied during the process for scaffolding purposes, but while it might not need as much discussion time as the User Stories for Interactions and Data, it definitely could use some User Stories especially
-Note: our styling overall, we feel is solid. We could have organized the styled-components integrating with the Rux UI as a separate User Story all on its own
-
-
-
-——————
-Retro
 
