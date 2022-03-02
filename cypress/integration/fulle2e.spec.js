@@ -28,12 +28,6 @@ describe('End-to-End Tests for Enhanced Scheduling App - MAIN ROUTE', () => {
 
 })
 
-describe('End-to-End Tests for Enhanced Scheduling App - DEVELOPER ROUTE', () => {
-  
-
-})
-
-
 describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
 
   const navigate_to_admin = () => {
@@ -107,6 +101,48 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
   
-  
+  const navigate_to_user_details = () => {
+    cy.visit('/');
+    cy.get('#rosterList').find('li').should('have.length.gte', 1);
+    cy.get('a').eq(3).click();
+  }
 
-})
+  it('renders the title Member Availability upon load', () => {
+    navigate_to_user_details();
+    cy.get('rux-global-status-bar').shadow().find('h1').should('have.text','TESTMEMBER AVAILABILITY');
+  })
+
+  it('renders the first name of a user upon load', () => {
+    navigate_to_user_details();
+    cy.get("#userDetailsFirstName").contains("John");
+  })
+  
+  it('renders the last name of a user upon load', () => {
+    navigate_to_user_details();
+    cy.get("#userDetailsLastName").contains("Doe");
+  })
+  
+  it('renders a preference select of a user upon load', () => {
+    navigate_to_user_details();
+    cy.get("rux-select").shadow().find('option').should('have.length', 3);
+  })
+
+  it('renders a preference selection option 1 should be day', () => {
+    navigate_to_user_details();
+    cy.get("rux-select").shadow().find('option').eq(0).contains('Day');
+  })
+
+  it('renders a preference selection option 2 should be swing', () => {
+    navigate_to_user_details();
+    cy.get("rux-select").shadow().find('option').eq(1).contains('Swing');
+  })
+
+  it('renders a preference selection option 3 should be mid', () => {
+    navigate_to_user_details();
+    cy.get("rux-select").shadow().find('option').eq(2).contains('Mid');
+  })
+
+  it('renders the dates on the page', () => {
+    navigate_to_user_details();
+    cy.contains('Sat Jan 01 2022');
+  })})
