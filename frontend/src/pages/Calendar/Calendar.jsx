@@ -6,7 +6,6 @@ import { CalendarMonthlyLayout } from '../../components/StyledComponents/Calenda
 import { CalendarDayCard } from '../../components/StyledComponents/CalendaryDayCard';
 import { ShiftContainer } from '../../components/StyledComponents/ShiftContainer';
 import { Shift } from '../../components/StyledComponents/Shift';
-import useFetch from '../../utils/useFetch/useFetch';
 import { saveCsv } from '../../utils/saveCsv';
 import { SchedulerContext } from '../../SchedulerContext';
 
@@ -58,15 +57,16 @@ const Calendar = () => {
 
   return (
     <article style={{ width: '100%' }}>
-        {location === '/' && 
-              <RuxButton
-              id="downloadButton"
-              style={{ padding: '1rem' }}
-              onClick={() => saveCsv(data, `Schedule_${new Date().getUTCFullYear()}_${new Date().getUTCMonth() + 1}`)}
-            >
-              Download
-            </RuxButton>
-        }
+      {location === '/' && (
+        <RuxButton
+          id="downloadButton"
+          dataTestid="downloadButton"
+          style={{ padding: '1rem' }}
+          onClick={() => saveCsv(data, `Schedule_${new Date().getUTCFullYear()}_${new Date().getUTCMonth() + 1}`)}
+        >
+          Download
+        </RuxButton>
+      )}
       <br />
       <br />
       {view === 'monthly' ? (
