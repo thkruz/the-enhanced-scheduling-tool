@@ -120,13 +120,17 @@ describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g
 
   it('renders the first name of a user upon load', () => {
     navigate_to_user_details();
-    cy.get("userDetailsFirstName").contains("John");
+    cy.get("#userDetailsFirstName").contains("John");
   })
   
-  it('renders the first name of a user upon load', () => {
+  it('renders the last name of a user upon load', () => {
     navigate_to_user_details();
-    cy.get("userDetailsLastName").contains("Doe");
+    cy.get("#userDetailsLastName").contains("Doe");
   })
   
+  it('renders a preference select of a user upon load', () => {
+    navigate_to_user_details();
+    cy.get("RuxSelect").shadow().find('option').should('have.length', 3);
+  })
 
 })
