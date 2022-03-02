@@ -84,7 +84,19 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
   it('third option is Mid', () => {
     navigate_to_admin();
     cy.get('rux-button').eq(2).click();
-    cy.get('form').find('rux-radio').eq(2).invoke('attr', 'value').should('contain', 'mid');
+  })
+
+  it('removes one or more users when using the Remove User button', () => {
+    navigate_to_admin();
+    cy.get('#rosterList').find('li').contains('John Doe');
+    cy.get('rux-button').eq(3).click();
+    cy.get('rux-checkbox').should('have.length.gte', 1);
+    cy.get('rux-checkbox').eq(0).shadow().find('input').invoke('width','20px');
+    cy.get('rux-checkbox').eq(0).shadow().find('input').invoke('height','20px');
+    cy.get('rux-checkbox').eq(0).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-checkbox').eq(0).shadow().find('input').click();
+    cy.get('rux-button').click();
+    cy.get('#rosterList').find('li').contains('John Doe').should('not.exist');
   })
 
   it('adds a new user to the roster after filling out and submitting the form', () => {
