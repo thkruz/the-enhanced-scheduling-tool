@@ -100,7 +100,23 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('form').find('rux-button').click();
     cy.get('#rosterList').find('li').contains('Tony Kelly');
   })
-  
+
+  it('shows an alert if the first name field is empty on add user', function(){
+    navigate_to_admin();
+    const stub = cy.stub()  
+    cy.on('window:alert', stub)
+    cy.get('rux-button').eq(2).click();
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('width','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('height','20px');
+    cy.get('rux-input').eq(0).shadow().find('input').invoke('show').should('be.visible');
+    cy.get('rux-input').eq(0).shadow().find('input').type('Tony');
+    cy.get('form').find('rux-button').click();
+    cy.then(() => {
+      expect(stub.getCall(0)).to.be.calledWith('First and Last Name Required!')      
+    });
+
+})
+
   it('removes one or more users when using the Remove User button', () => {
     navigate_to_admin();
     cy.get('#rosterList').find('li').contains('John Doe');
@@ -113,7 +129,7 @@ describe('End-to-End Tests for Enhanced Scheduling App - ADMIN ROUTE', () => {
     cy.get('rux-button').click();
     cy.get('#rosterList').find('li').contains('John Doe').should('not.exist');
   })
-
+    
 })
 
 describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g. /users/1)', () => {
