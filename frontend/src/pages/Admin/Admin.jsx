@@ -58,7 +58,7 @@ const Admin = () => {
 
         {status === 'add' && <AdminAddNewUser setStatus={setStatus} />}
         {status === 'remove' && <AdminRemoveUser setStatus={setStatus} />}
-        <div>{scheduler.roster.length === 0 ? <Loading /> : status === '' ? <Calendar /> : ''}</div>
+        <div>{scheduler.roster?.length === 0 ? <Loading /> : status === '' ? <Calendar /> : ''}</div>
       </VerticalSpacer>
     </AdminContainer>
   );
