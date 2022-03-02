@@ -45,13 +45,13 @@ const Admin = () => {
                             <RuxButton data-testid="data-testid-ud" onClick={handleDataUpload}>Upload Roster Data</RuxButton><span>TBD, only alerts</span>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton><span>Completed</span>
+                            <RuxButton data-testid="data-testid-ed" onClick={handleExportData}>Export Roster Data</RuxButton>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton><span>Completed</span>
+                            <RuxButton data-testid="data-testid-au" onClick={handleAddNewUser}>Add New User</RuxButton>
                         </Padding>
                         <Padding>
-                            <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton><span>Completed</span>
+                            <RuxButton data-testid="data-testid-ru" onClick={handleRemoveUser}>Remove User</RuxButton>
                         </Padding>
                     </div>
                 }
