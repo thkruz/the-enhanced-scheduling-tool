@@ -138,13 +138,17 @@ describe('End-to-End Tests for Enhanced Scheduling App - USER DETAILS ROUTE (e.g
     cy.get("rux-select").shadow().find('option').eq(0).contains('Day');
   })
 
-  it('renders a preference selection option 1 should be swing', () => {
+  it('renders a preference selection option 2 should be swing', () => {
     navigate_to_user_details();
     cy.get("rux-select").shadow().find('option').eq(1).contains('Swing');
   })
 
   it('renders a preference selection option 3 should be swing', () => {
     navigate_to_user_details();
-    cy.get("rux-select").shadow().find('option').eq(1).contains('Mid');
+    cy.get("rux-select").shadow().find('option').eq(2).contains('Mid');
   })
-})
+
+  it('renders the dates on the page', () => {
+    navigate_to_user_details();
+    cy.contains('Sat Jan 01 2022');
+  })})
