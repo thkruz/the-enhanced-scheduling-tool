@@ -51,7 +51,7 @@ const Calendar = () => {
 
   useEffect(() => {
     setData(scheduler.calendar);
-  });
+  }, [scheduler?.calendar]);
 
   if (scheduler?.calendar.length <= 0) return <Loading />;
 
