@@ -39,7 +39,7 @@
   "homepage": "https://github.com/tkbdsi/sdi-blended-project2-scaffold#readme",
   "devDependencies": {
     "@cypress/react": "^5.12.3",
-    "@cypress/webpack-dev-server": "^1.8.1",
+    "@cypress/webpack-dev-server": "^2.0.0",
     "@cypress/webpack-preprocessor": "^5.11.1",
     "@testing-library/cypress": "^8.0.2",
     "cypress": "^9.5.0",
