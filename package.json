@@ -40,7 +40,7 @@
   "devDependencies": {
     "@cypress/react": "^5.12.3",
     "@cypress/webpack-dev-server": "^1.8.1",
-    "@cypress/webpack-preprocessor": "^5.11.1",
+    "@cypress/webpack-preprocessor": "^5.16.0",
     "@testing-library/cypress": "^8.0.2",
     "cypress": "^9.5.0",
     "prettier": "^2.5.1",
